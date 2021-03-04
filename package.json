@@ -1,0 +1,18 @@
+{
+  "name": "bullsfirst-docs",
+  "description": "Bullsfirst is an application to trade securities and manage investments.",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Naresh Bhatia",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-accelerate/bullsfirst-docs"
+  },
+  "scripts": {
+    "format": "prettier --write README.md exercises"
+  },
+  "dependencies": {
+    "prettier": "^2.2.1"
+  }
+}

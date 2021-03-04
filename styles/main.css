@@ -1,0 +1,39 @@
+.navbar__icon {
+  color: var(--bf-navbar-text);
+}
+
+.navbar__icon:hover {
+  color: var(--bf-navbar-text-hover);
+}
+
+.error-text {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: var(--danger);
+}
+
+:root {
+  /* Primary */
+  --bf-primary-dark: #102a43;
+  --bf-primary-main: #0a558c;
+  --bf-primary-light: #f0f4f8;
+
+  /* Secondary */
+  --bf-secondary-main: #f7c948;
+  --bf-secondary-contrast-text: #102a43;
+
+  /* Sidebar */
+  --bf-sidebar-background: #303030;
+  --bf-sidebar-item: rgba(255, 255, 255, 0.75);
+  --bf-sidebar-itemactive: #84c5f4;
+
+  /* Navbar */
+  --bf-navbar-item: rgba(40, 40, 40, 0.75);
+  --bf-navbar-text: rgba(255, 255, 255, 0.5);
+  --bf-navbar-text-hover: rgba(255, 255, 255, 0.8);
+
+  /* Business */
+  --bf-buy: #014d40;
+  --bf-sell: #610316;
+}
