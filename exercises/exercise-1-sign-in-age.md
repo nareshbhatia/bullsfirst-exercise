@@ -11,6 +11,8 @@ below the form.
 - Form handling and validation will be done using react-hook-form and yup.
 - The route for this page will be `/`.
 - On successful submit, simply console out the form values.
+- Make sure you have good unit test coverage, e.g. test that field validations
+  are working.
 
 ## Getting Started
 
@@ -32,12 +34,15 @@ page.
 
 ## Dependencies
 
-1. bootstrap
-2. react-bootstrap
-3. react-icons
-4. react-hook-form
-5. @hookform/resolvers
-6. yup & @types/yup
+Version numbers noted are at the time of this writing.
+
+1. bootstrap (4.6.0)
+2. react-bootstrap (1.5.0)
+3. react-icons (4.2.0)
+4. react-hook-form (6.15.4)
+5. @hookform/resolvers (2.0.0-rc.1)
+6. yup (0.32.9)
+7. @types/yup (0.29.11) - dev dependency
 
 ## Resources
 
