@@ -10,7 +10,13 @@ below the form.
 - We will use react-icons to render icons.
 - Form handling and validation will be done using react-hook-form and yup.
 - The route for this page will be `/`.
-- On successful submit, simply console out the form values.
+- You will create two components for this exercise
+  - `SingIn` - this is the sign-in page
+  - `SignInForm` - this is a child of the `SignIn` page and contains a form that
+    accepts and validates user credentials. If validations succeed, it returns
+    the credentials entered by the user to the parent component.
+- On successful submit, simply console out the form values in the parent
+  component (`SignIn` page).
 - Make sure you have good unit test coverage, e.g. test that field validations
   are working.
 - Attach screenshots of the sign-in page to your pull request to show responsive
