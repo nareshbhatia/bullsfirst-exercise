@@ -13,6 +13,7 @@ below the form.
 - On successful submit, simply console out the form values.
 - Make sure you have good unit test coverage, e.g. test that field validations
   are working.
+- Attach a screenshot of your component to your pull request. 
 
 ## Getting Started
 
