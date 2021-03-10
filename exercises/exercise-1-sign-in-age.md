@@ -13,7 +13,10 @@ below the form.
 - On successful submit, simply console out the form values.
 - Make sure you have good unit test coverage, e.g. test that field validations
   are working.
-- Attach a screenshot of your component to your pull request. 
+- Attach screenshots of the sign-in page to your pull request to show responsive
+  behavior.
+  - mobile (320 x 768)
+  - desktop (1280 x 800)
 
 ## Getting Started
 
