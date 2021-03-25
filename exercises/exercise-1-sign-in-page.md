@@ -6,9 +6,17 @@ centered horizontally and slightly above the center vertically. A good approach
 is to distribute one-third of the empty space above and two-thirds below the
 form.
 
+### Sign-in Page | Desktop
+
 ![Sign-in Page Desktop](../visual-design/sign-in-desktop.png)
 
+### Sign-in Page | Mobile
+
 ![Sign-in Page Mobile](../visual-design/sign-in-mobile.png)
+
+### Sign-in Page | Validations
+
+![Sign-in Page Validations](../visual-design/sign-in-validations.png)
 
 - We will use bootstrap and react-bootstrap as our component libraries.
 - We will use react-icons to render icons.

@@ -29,5 +29,6 @@ According to
 
 ## Exercises
 
-1. [Sign-up Page](exercises/exercise-1-sign-in-age.md)
+1. [Sign-up Page](exercises/exercise-1-sign-in-page.md)
 2. [SideBar](exercises/exercise-2-sidebar.md)
+3. [Accounts Page](exercises/exercise-3-accounts-page.md)

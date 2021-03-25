@@ -22,7 +22,7 @@ inform its parent about user interactions using the handler passed in the
   right-hand side.
 - Make sure you have good unit test coverage, e.g. test that `onNavItemSelected`
   is called with the correct parameter when a nav item is selected.
-- Attach a screenshot of your Storybook story to your pull request
+- Attach a screenshot of your Storybook story to your pull request.
 
 ## References
 
