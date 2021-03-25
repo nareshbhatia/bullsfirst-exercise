@@ -47,8 +47,3 @@ component to create the 4 links on the Account page.
 - Write an integration test using Cypress that starts from the Sign-in page and
   navigates to the Accounts page.
 - Attach a screenshot of your implementation to your pull request.
-
-## References
-
-1. [React Force SideBar Story](https://nareshbhatia.github.io/react-force/?path=/story/core-sidebar--side-bar-story)
-2. [React Force SideBar Code](https://github.com/nareshbhatia/react-force/blob/master/packages/core/src/NavBar/SideBar.tsx)
