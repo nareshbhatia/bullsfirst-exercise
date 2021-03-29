@@ -10,11 +10,23 @@ In this exercise, we will
 5. We will add routing that allows the user to navigate from Sign-in page to the
    Accounts page on successful sign-in.
 6. The Accounts page will query the server to get all the accounts owned by the
-   user. Use a mock server for this step.
-7. The Accounts page will then land on the Overview tab and show the information
-   for the first user account.
+   user. We will use GraphQL for this step. Use
+   [Apollo GraphQL Client](https://www.apollographql.com/docs/react/) to send
+   GraphQL queries to the server.
+7. We will use [Mock Service Worker](https://mswjs.io/) to mock the GraphQL
+   server.
+8. Once the Accounts page receives a list of accounts from the server, it will
+   select the first account and show it in the Overview tab.
+9. Make sure you have good unit test coverage.
+10. Write an integration test using Cypress that starts from the Sign-in page
+    and navigates to the Accounts page.
+11. Attach a screenshot of your implementation to your pull request.
 
 ![Accounts Page](../visual-design/accounts-page.png)
+
+## Tips
+
+### React Router
 
 Use React Router's
 [nested routes](https://github.com/ReactTraining/react-router/blob/dev/docs/installation/getting-started.md#nested-routes)
@@ -43,7 +55,120 @@ Also use React Router's
 [NavLink](https://github.com/ReactTraining/react-router/blob/dev/docs/api-reference.md#navlink)
 component to create the 4 links on the Account page.
 
-- Make sure you have good unit test coverage.
-- Write an integration test using Cypress that starts from the Sign-in page and
-  navigates to the Accounts page.
-- Attach a screenshot of your implementation to your pull request.
+### Apollo GraphQL Client
+
+Set up Apollo GraphQL Client in src/index.tsx as follows:
+
+```typescript jsx
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: 'https://localhost:8080',
+  cache: new InMemoryCache(),
+});
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Suspense fallback={<Loading />}>
+      <ErrorBoundary>
+        <ApolloProvider client={client}>
+          <Router>
+            <App />
+          </Router>
+        </ApolloProvider>
+      </ErrorBoundary>
+    </Suspense>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+```
+
+Then use the apollo client in src/features/Accounts/Accounts.tsx as shown below
+to fetch the accounts:
+
+```typescript jsx
+import { useQuery, gql } from '@apollo/client';
+
+const GET_ACCOUNTS = gql`
+  query GetAccounts {
+    accounts {
+      id
+      name
+    }
+  }
+`;
+
+interface Account {
+  id: string;
+  name: string;
+}
+
+interface AccountsData {
+  accounts: Array<Account>;
+}
+
+export const Accounts = () => {
+  const { loading, error, data } = useQuery<AccountsData>(GET_ACCOUNTS);
+
+  if (loading) return <Loading />;
+  if (error) {
+    throw error;
+  }
+
+  return (
+    <ViewVerticalContainer>
+      <Header />
+      <HorizontalContainer className="bf-min-height-0">
+        {selectedNavId !== undefined ? (
+          <SideBar
+            title="Accounts"
+            items={data?.accounts}
+            selectedNavItemId={selectedNavId}
+            onNavItemSelected={handleNavItemSelected}
+          />
+        ) : (
+          <div className="p-3">No accounts found</div>
+        )}
+        <Outlet />
+      </HorizontalContainer>
+    </ViewVerticalContainer>
+  );
+};
+```
+
+### Mock Service Worker
+
+Setup Mock Service Worker as described in the
+[docs](https://mswjs.io/docs/getting-started/install). During set up, choose the
+GraphQL and Browser options.
+
+Finally, add the following code to your MSW `handlers.js` file to mock the
+`GetAccounts` API:
+
+```typescript jsx
+import { graphql } from 'msw';
+
+export const handlers = [
+  // ---- GetAccounts -----
+  graphql.query('GetAccounts', (req, res, ctx) => {
+    return res(
+      ctx.data({
+        accounts: [
+          {
+            id: 'brokerage-account',
+            name: 'Brokerage Account',
+          },
+          {
+            id: 'retirement-account',
+            name: 'Retirement Account',
+          },
+          {
+            id: 'jennys-college-fund',
+            name: "Jenny's College Fund",
+          },
+        ],
+      })
+    );
+  }),
+];
+```
