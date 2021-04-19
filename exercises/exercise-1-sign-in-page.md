@@ -18,11 +18,20 @@ form.
 
 ![Sign-in Page Validations](../visual-design/sign-in-validations.png)
 
-- We will use bootstrap and react-bootstrap as our component libraries.
-- We will use react-icons to render icons.
-- Form handling and validation will be done using react-hook-form and yup.
-- The route for this page will be `/`.
-- You will create two components for this exercise
+## General Guidelines
+
+- Use only CSS to style your components.
+- Use CSS Variables to ensure that you are not repeating color values, spacings
+  etc.
+- You may use a lightweight CSS framework like
+  [Chota](https://jenil.github.io/chota/) to get you started. See
+  [Accelerated News](https://github.com/PublicisSapient/accelerated-news) for an
+  example.
+- Use [BEM](https://en.bem.info/) to properly namespace your styles.
+- Use react-icons to render icons.
+- Use react-hook-form and yup for form handling and validation.
+- Set the route for this page to `/`.
+- Create two components for this exercise
   - `SingIn` - this is the sign-in page
   - `SignInForm` - this is a child of the `SignIn` page and contains a form that
     accepts and validates user credentials. If validations succeed, it returns
@@ -58,13 +67,11 @@ page.
 
 Version numbers noted are at the time of this writing.
 
-1. bootstrap (4.6.0)
-2. react-bootstrap (1.5.0)
-3. react-icons (4.2.0)
-4. react-hook-form (6.15.4)
-5. @hookform/resolvers (2.0.0-rc.1)
-6. yup (0.32.9)
-7. @types/yup (0.29.11) - dev dependency
+1. react-icons (4.2.0)
+2. react-hook-form (6.15.4)
+3. @hookform/resolvers (2.0.0-rc.1)
+4. yup (0.32.9)
+5. @types/yup (0.29.11) - dev dependency
 
 ## Resources
 
@@ -73,8 +80,13 @@ Version numbers noted are at the time of this writing.
 
 ## References
 
-1. [React Hook Form example with Yup validation](https://react-hook-form.com/get-started/#SchemaValidation)
-2. [Complex form example](https://github.com/nareshbhatia/form-examples)
+1. [MindBEMding – getting your head ’round BEM syntax](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+2. [Get BEM - Naming](http://getbem.com/naming/)
+3. [Learn CSS Variables in 5 minutes](https://www.freecodecamp.org/news/learn-css-variables-in-5-minutes-80cf63b4025d/)
+4. [Difference between CSS variables and preprocessor variables](https://css-tricks.com/difference-between-types-of-css-variables/)
+5. [CSS Variables - Lea Verou](https://www.youtube.com/watch?v=2an6-WVPuJU)
+6. [React Hook Form example with Yup validation](https://react-hook-form.com/get-started/#SchemaValidation)
+7. [Complex form example](https://github.com/nareshbhatia/form-examples)
    1. Clone this repo and build the example
    2. Check out the helper components
       [here](https://github.com/nareshbhatia/form-examples/tree/main/checkout-form-rhf/src/components/Form)
