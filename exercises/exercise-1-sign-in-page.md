@@ -48,15 +48,15 @@ form.
 ## Getting Started
 
 As a participant in the React Accelerate program, you have been assigned a
-repository named `bullsfist-[firstname]-[lastname]` on GitHub. Please create a
+repository named `bullsfirst-[firstname]-[lastname]` on GitHub. Please create a
 local repo on your machine with the same name using the
 [React Accelerate](https://github.com/PublicisSapient/cra-template-accelerate)
 template. For example, the repository name assigned to me was
-`bullsfist-naresh-bhatia`, so I created a local repository using the following
+`bullsfirst-naresh-bhatia`, so I created a local repository using the following
 command:
 
 ```sh
-npx create-react-app bullsfist-naresh-bhatia --template accelerate
+npx create-react-app bullsfirst-naresh-bhatia --template accelerate
 ```
 
 Make sure your local repo works by running the app. If everything looks good,
