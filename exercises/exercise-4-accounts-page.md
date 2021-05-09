@@ -1,8 +1,8 @@
-# Exercise 3: Accounts Page
+# Exercise 4: Accounts Page
 
 In this exercise, we will
 
-1. Create a skeleton of the Accounts page as show below.
+1. Create a skeleton of the Accounts page as show in the visual design.
 2. We will include the `SideBar` that was implemented in exercise 2.
 3. We will add an `AccountHeader` consisting of 4 links (Overview, Holdings
    Orders & Activity) and 3 buttons (Transfer, Trade and Refresh).
@@ -21,8 +21,6 @@ In this exercise, we will
 10. Write an integration test using Cypress that starts from the Sign-in page
     and navigates to the Accounts page.
 11. Attach a screenshot of your implementation to your pull request.
-
-![Accounts Page](../visual-design/accounts-page.png)
 
 ## Tips
 

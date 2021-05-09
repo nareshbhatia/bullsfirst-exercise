@@ -1,4 +1,4 @@
-# Exercise 2: SideBar
+# Exercise 3: SideBar
 
 Implement a reusable `SideBar` component as shown below. The sidebar should
 extend to the bottom of the page even when the window is resized.
