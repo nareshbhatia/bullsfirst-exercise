@@ -39,9 +39,17 @@ command:
 npx create-react-app bullsfirst-naresh-bhatia --template accelerate
 ```
 
-Make sure your local repo works by running the app. If everything looks good,
-push this repository to GitHub using the instructions on your GitHub repository
-page.
+Make sure your local repo works by running the app. Make any adjustments if
+needed. For example, I prefer the sections in package.json in a certain order
+(see some initial commits on accelerated-news). If everything looks good, push
+this repository to GitHub using the instructions in your GitHub repository page.
+
+At this point create a branch from `main` and call it something like
+`home-page`. Always work on a branch when implementing a new feature or fixing a
+bug. Never work directly on main.
+
+Once you have a sufficient implementation of this exercise, create a pull
+request so that others can start reviewing your code and providing comments.
 
 ## Resources
 
@@ -54,3 +62,4 @@ page.
 3. [Learn CSS Variables in 5 minutes](https://www.freecodecamp.org/news/learn-css-variables-in-5-minutes-80cf63b4025d/)
 4. [Difference between CSS variables and preprocessor variables](https://css-tricks.com/difference-between-types-of-css-variables/)
 5. [CSS Variables - Lea Verou](https://www.youtube.com/watch?v=2an6-WVPuJU)
+6. [How to Make Your Code Reviewer Fall in Love with You](https://mtlynch.io/code-review-love/)
