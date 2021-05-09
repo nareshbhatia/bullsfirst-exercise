@@ -2,8 +2,9 @@
 
 In this exercise, we will
 
-1. Create a skeleton of the Accounts page as show in the visual design.
-2. We will include the `SideBar` that was implemented in exercise 2.
+1. Create a skeleton of the Accounts page as show in the
+   [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
+2. We will include the `SideBar` that was implemented in exercise 3.
 3. We will add an `AccountHeader` consisting of 4 links (Overview, Holdings
    Orders & Activity) and 3 buttons (Transfer, Trade and Refresh).
 4. We will add dummy content for Overview, Holdings, Orders & Activity tabs.
@@ -34,7 +35,9 @@ feature to navigate to the 4 tabs on the Account page:
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<SignIn />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route path="/accounts" element={<Accounts />}>
         <Route path=":accountId" element={<Account />}>
           <Route path="overview" element={<Overview />} />
@@ -46,8 +49,8 @@ export const App = () => {
 };
 ```
 
-For example, if the user has an account with id = 1234, the route for the
-overview tab will be `/accounts/1234/overview`.
+For example, if the user has an account with id = 'brokerage-account', the route
+for the overview tab will be `/accounts/brokerage-account/overview`.
 
 Also use React Router's
 [NavLink](https://github.com/ReactTraining/react-router/blob/dev/docs/api-reference.md#navlink)

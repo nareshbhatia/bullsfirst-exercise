@@ -1,10 +1,11 @@
 # Exercise 2: Sign-In Page
 
-Implement the sign-in page as shown in the visual designs. This is a responsive
-page and should look good on mobile, tablets and desktop. Make sure that the
-sign-in form is centered horizontally and slightly above the center vertically.
-A good approach is to distribute one-third of the empty space above and
-two-thirds below the form.
+Implement the sign-in page as shown in the
+[visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
+This is a responsive page and should look good on mobile, tablets and desktop.
+Make sure that the sign-in form is centered horizontally and slightly above the
+center vertically. A good approach is to distribute one-third of the empty space
+above and two-thirds below the form.
 
 ## General Guidelines
 

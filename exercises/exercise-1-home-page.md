@@ -1,7 +1,8 @@
 # Exercise 1: Home Page
 
-Implement the home page as shown in the visual designs. This is a responsive
-page and should look good on mobile, tablets and desktop.
+Implement the home page as shown in the
+[visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
+This is a responsive page and should look good on mobile, tablets and desktop.
 
 ## General Guidelines
 

@@ -5,6 +5,9 @@ extend to the bottom of the page even when the window is resized.
 
 ![SideBar](../visual-design/sidebar.png)
 
+For a detailed design of the sidebar, refer to the
+[Figma project](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
+
 The component should be stateless. It will receive the following props and
 inform its parent about user interactions using the handler passed in the
 `onNavItemSelected` prop.
