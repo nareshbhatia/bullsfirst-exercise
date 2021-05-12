@@ -17,7 +17,12 @@ This is a responsive page and should look good on mobile, tablets and desktop.
 - Set the route for this page to `/`.
 - When the "Sign In" button is clicked, navigate to a blank page with the route
   set to `/signin`.
-- Create a simple unit test to make sure that the page is rendering correctly.
+- Don't build the Home page as a monolithic component. Break it up into smaller
+  logical components, e.g. Hero, Content and Footer. Create these components in
+  Storybook and make sure they behave as expected. When satisfied, wire them
+  into the Home page.
+- Create simple unit tests to make sure that the components and the page are
+  rendering correctly.
 - Create an integration test to make sure that the navigation to Sign In page is
   working correctly.
 - Attach screenshots of the sign-in page to your pull request to show responsive
