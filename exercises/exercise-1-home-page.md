@@ -3,9 +3,10 @@
 Implement the home page as shown in the
 [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
 This is a responsive page and should look good on mobile, tablets and desktop.
-For desktop form factors, the main content should be 800px wide and centered on
-the page. For mobile form factors (below 480px), the content should be full
-width, with 24px padding on left and right.
+There is one breakpoint at 480px. Below this the content should be full width.
+Above this the content should be centered on the screen, with max-width of
+800px. In both cases there should be 24px of left and right padding. So the
+effective max-width for content on desktops is 800 - (2 * 24) = 752px.
 
 ## General Guidelines
 
@@ -21,9 +22,9 @@ width, with 24px padding on left and right.
 - When the "Sign In" button is clicked, navigate to a blank page with the route
   set to `/signin`.
 - Don't build the Home page as a monolithic component. Break it up into smaller
-  logical components, e.g. Hero, Content and Footer. Create these components in
-  Storybook and make sure they behave as expected. When satisfied, wire them
-  into the Home page.
+  logical components, e.g. Hero, Content and Footer. Create a Storybook story
+  for the Hero component to make sure it behaves as expected. When satisfied,
+  wire it into the Home page.
 - Create simple unit tests to make sure that the components and the page are
   rendering correctly.
 - Create an integration test to make sure that the navigation to Sign In page is
