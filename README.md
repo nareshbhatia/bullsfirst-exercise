@@ -32,18 +32,18 @@ According to
 3. [SideBar](exercises/exercise-3-sidebar.md)
 4. [Accounts Page](exercises/exercise-4-accounts-page.md)
 
-## Resources
+## Learning Resources
 
 Note that Udemy courses listed below are available through PublicisSapient
 Learning & Development teams.
 
-## TypeScript
+### TypeScript
 
 1. [Official TypeScript documentation](https://www.typescriptlang.org/docs/)
 2. [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/getting-started)
 3. [Understanding TypeScript - Udemy](https://www.udemy.com/course/understanding-typescript/)
 
-## React
+### React
 
 1. [React documentation](https://reactjs.org/docs/getting-started.html)
 2. [React - The Complete Guide - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
@@ -52,36 +52,36 @@ Learning & Development teams.
 5. [Kent Dodd's Blog](https://kentcdodds.com/)
 6. [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)
 
-## React Router
+### React Router
 
 1. [Version 5 docs](https://github.com/ReactTraining/react-router/tree/dev/docs) -
    Note that v5 is in beta. The only up-to-date docs are here in the dev branch.
 
-## React Testing Library
+### React Testing Library
 
 1. [Introduction](https://testing-library.com/docs/)
 2. [Guiding Principles](https://testing-library.com/docs/guiding-principles)
 3. [Example](https://testing-library.com/docs/react-testing-library/example-intro)
 4. [Cheatsheet](https://testing-library.com/docs/react-testing-library/cheatsheet)
 
-## Storybook
+### Storybook
 
 1. [Introduction to Storybook](https://storybook.js.org/docs/react/get-started/introduction)
 
-# Mock Service Worker
+### Mock Service Worker
 
 1. [Documentation](https://mswjs.io/docs/)
 
-# Cypress
+### Cypress
 
 1. [Documentation](https://docs.cypress.io/guides/overview/why-cypress)
 
-## Visual Design
+### Visual Design
 
 1. [Refactoring UI](https://www.refactoringui.com/) (written by the authors of
    Tailwind CSS)
 2. [Foundations of Design Systems - Emma Wedekind](https://www.youtube.com/watch?v=pXb2jA43A6k)
 
-## Domain-Driven Design
+### Domain-Driven Design
 
 1. [Naresh Bhatia's Blog](https://archfirst.org/domain-driven-design/)
