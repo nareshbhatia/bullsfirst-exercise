@@ -3,6 +3,9 @@
 Implement the home page as shown in the
 [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
 This is a responsive page and should look good on mobile, tablets and desktop.
+For desktop form factors, the main content should be 800px wide and centered on
+the page. For mobile form factors (below 480px), the content should be full
+width, with 24px padding on left and right.
 
 ## General Guidelines
 

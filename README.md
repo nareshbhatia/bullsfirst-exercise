@@ -52,12 +52,36 @@ Learning & Development teams.
 5. [Kent Dodd's Blog](https://kentcdodds.com/)
 6. [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)
 
-## Domain-Driven Design
+## React Router
 
-1. [Naresh Bhatia's Blog](https://archfirst.org/domain-driven-design/)
+1. [Version 5 docs](https://github.com/ReactTraining/react-router/tree/dev/docs) -
+   Note that v5 is in beta. The only up-to-date docs are here in the dev branch.
+
+## React Testing Library
+
+1. [Introduction](https://testing-library.com/docs/)
+2. [Guiding Principles](https://testing-library.com/docs/guiding-principles)
+3. [Example](https://testing-library.com/docs/react-testing-library/example-intro)
+4. [Cheatsheet](https://testing-library.com/docs/react-testing-library/cheatsheet)
+
+## Storybook
+
+1. [Introduction to Storybook](https://storybook.js.org/docs/react/get-started/introduction)
+
+# Mock Service Worker
+
+1. [Documentation](https://mswjs.io/docs/)
+
+# Cypress
+
+1. [Documentation](https://docs.cypress.io/guides/overview/why-cypress)
 
 ## Visual Design
 
 1. [Refactoring UI](https://www.refactoringui.com/) (written by the authors of
    Tailwind CSS)
 2. [Foundations of Design Systems - Emma Wedekind](https://www.youtube.com/watch?v=pXb2jA43A6k)
+
+## Domain-Driven Design
+
+1. [Naresh Bhatia's Blog](https://archfirst.org/domain-driven-design/)
