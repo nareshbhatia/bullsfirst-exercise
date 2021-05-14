@@ -22,8 +22,8 @@ above and two-thirds below the form.
   are working.
 - Attach screenshots of the sign-in page to your pull request to show responsive
   behavior.
-  - mobile (320 x 768)
-  - desktop (1280 x 800)
+  - mobile (460 x 800)
+  - desktop (1024 x 800)
 
 ## Dependencies
 

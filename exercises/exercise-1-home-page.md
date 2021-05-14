@@ -31,7 +31,7 @@ effective max-width for content on desktops is 800 - (2 * 24) = 752px.
   makes the app navigate to the _Sign In_ page.
 - Attach screenshots of the Home page to your pull request to show responsive
   behavior.
-  - mobile (375 x 667)
+  - mobile (460 x 800) (footer should be visible at this height)
   - desktop (1024 x 800)
 
 ## Getting Started
