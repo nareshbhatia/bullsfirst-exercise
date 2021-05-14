@@ -57,6 +57,12 @@ Learning & Development teams.
 1. [Version 5 docs](https://github.com/ReactTraining/react-router/tree/dev/docs) -
    Note that v5 is in beta. The only up-to-date docs are here in the dev branch.
 
+### React Hook Form
+
+1. [React Hook Form documentation](https://react-hook-form.com/get-started)
+2. [React Hook Form example with Yup validation](https://react-hook-form.com/get-started/#SchemaValidation)
+3. [Complex form example](https://github.com/nareshbhatia/form-examples)
+
 ### React Testing Library
 
 1. [Introduction](https://testing-library.com/docs/)
