@@ -25,14 +25,14 @@ effective max-width for content on desktops is 800 - (2 * 24) = 752px.
   logical components, e.g. Hero, Content and Footer. Create a Storybook story
   for the Hero component to make sure it behaves as expected. When satisfied,
   wire it into the Home page.
-- Create simple unit tests to make sure that the components and the page are
-  rendering correctly.
-- Create an integration test to make sure that the navigation to Sign In page is
-  working correctly.
-- Attach screenshots of the sign-in page to your pull request to show responsive
+- Create simple unit tests to make sure that the components are rendering
+  correctly.
+- Create an integration test to make sure that clicking on the _Sign In_ button
+  makes the app navigate to the _Sign In_ page.
+- Attach screenshots of the Home page to your pull request to show responsive
   behavior.
-  - mobile (320 x 768)
-  - desktop (1280 x 800)
+  - mobile (375 x 667)
+  - desktop (1024 x 800)
 
 ## Getting Started
 
