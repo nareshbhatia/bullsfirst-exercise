@@ -9,15 +9,34 @@ above and two-thirds below the form.
 
 ## General Guidelines
 
-- Use react-hook-form and yup for form handling and validation.
+- Introduce a data structure called `Credentials` consisting of an email and a
+  password. Use a TypeScript interface to define it in
+  /src/models/Credentials.ts.
+- Create the `SignIn` page under the folder /src/pages/SignIn.
 - Set the route for this page to `/signin`.
-- Create two components for this exercise
-  - `SingIn` - this is the sign-in page
-  - `SignInForm` - this is a child of the `SignIn` page and contains a form that
-    accepts and validates user credentials. If validations succeed, it returns
-    the credentials entered by the user to the parent component.
-- On successful submit, navigate to a blank Accounts page with the route
-  set to `/accounts`.
+- The component hierarchy of the SignIn page should look like this:
+
+```
+SignIn
+`--- SignInForm
+```
+
+- `SignInForm` contains two text fields: email and a password. It should use
+  react-hook-form and yup to accept user input and validate it. If validation
+  succeeds, it returns the credentials entered by the user to its parent. Here's
+  the definition of the props accepted by the SignInForm. Note that the form
+  also accepts a `signInError` to show any errors returned by the server in case
+  of sign-in failure.
+
+```ts
+export interface SignInFormProps {
+  signInError?: string;
+  onSubmit: (credentials: Credentials) => void;
+}
+```
+
+- For now, the SignIn page should not do anything with the credentials. It
+  should simply navigate to a blank Accounts page (route is `/accounts`).
 - Make sure you have good unit test coverage, e.g. test that field validations
   are working.
 - Attach screenshots of the sign-in page to your pull request to show responsive
@@ -29,7 +48,7 @@ above and two-thirds below the form.
 
 Version numbers noted are at the time of this writing.
 
-1. react-hook-form (7.2.3)
-2. @hookform/resolvers (2.4.0)
+1. react-hook-form (7.5.3)
+2. @hookform/resolvers (2.5.0)
 3. yup (0.32.9)
 4. @types/yup (0.29.11) - dev dependency

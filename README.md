@@ -43,6 +43,15 @@ Learning & Development teams.
 2. [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/getting-started)
 3. [Understanding TypeScript - Udemy](https://www.udemy.com/course/understanding-typescript/)
 
+Key concepts to understand:
+
+- Interfaces
+- Functions
+- Literal types
+- Generics
+- Classes (since React is moving towards functional components, the class
+  concept is surprisingly not that important)
+
 ### React
 
 1. [React documentation](https://reactjs.org/docs/getting-started.html)
