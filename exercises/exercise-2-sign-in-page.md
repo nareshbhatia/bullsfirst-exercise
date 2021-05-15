@@ -1,5 +1,7 @@
 # Exercise 2: Sign-In Page
 
+This exercise is focused on form handling and validation.
+
 Implement the sign-in page as shown in the
 [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
 This is a responsive page and should look good on mobile, tablets and desktop.
@@ -13,12 +15,12 @@ above and two-thirds below the form.
   password. Use a TypeScript interface to define it in
   /src/models/Credentials.ts.
 - Create the `SignIn` page under the folder /src/pages/SignIn.
-- Set the route for this page to `/signin`.
+- Set the route of this page to `/signin`.
 - The component hierarchy of the SignIn page should look like this:
 
 ```
 SignIn
-`--- SignInForm
+  SignInForm
 ```
 
 - `SignInForm` contains two text fields: email and a password. It should use
@@ -39,6 +41,9 @@ export interface SignInFormProps {
   should simply navigate to a blank Accounts page (route is `/accounts`).
 - Make sure you have good unit test coverage, e.g. test that field validations
   are working.
+- Update the authentication integration test to make sure that the _Sign In_
+  page navigates to the _Accounts_ page when the validations are successful.
+- Write a new integration test to verify failed form validations.
 - Attach screenshots of the sign-in page to your pull request to show responsive
   behavior.
   - mobile (460 x 800)

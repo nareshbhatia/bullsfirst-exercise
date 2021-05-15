@@ -1,5 +1,7 @@
 # Exercise 1: Home Page
 
+This exercise is focused on writing good CSS.
+
 Implement the home page as shown in the
 [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
 This is a responsive page and should look good on mobile, tablets and desktop.
@@ -27,8 +29,10 @@ effective max-width for content on desktops is 800 - (2 * 24) = 752px.
   wire it into the Home page.
 - Create simple unit tests to make sure that the components are rendering
   correctly.
-- Create an integration test to make sure that clicking on the _Sign In_ button
-  makes the app navigate to the _Sign In_ page.
+- Start a new integration test named `authentication.spec.js`. We will expand
+  this test over the next few exercises to verify the authentication flow. For
+  now, simply make sure that clicking on the _Sign In_ button makes the app
+  navigate to the _Sign In_ page.
 - Attach screenshots of the Home page to your pull request to show responsive
   behavior.
   - mobile (460 x 800) (footer should be visible at this height)

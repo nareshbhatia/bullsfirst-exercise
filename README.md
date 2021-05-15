@@ -49,8 +49,8 @@ Key concepts to understand:
 - Functions
 - Literal types
 - Generics
-- Classes (since React is moving towards functional components, the class
-  concept is surprisingly not that important)
+- Classes (since React's move towards functional components, the class concept
+  is surprisingly not that important)
 
 ### React
 
