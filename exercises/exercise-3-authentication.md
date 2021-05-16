@@ -63,7 +63,9 @@ server calls to get data or perform actions.
 
 - Implement the sign-up page as shown in the
   [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
-  When the sign-up form is submitted, the client should send the `UserInfo` to
+  The design is very similar to the _Sign In_ page, with two additional fields.
+  The responsive requirements are also the same.
+- When the sign-up form is submitted, the client should send the `UserInfo` to
   the server. The server should create a new user and return a user object along
   with an access token. Client should save the access token in localStorage and
   use it in subsequent requests. It should then redirect to the accounts page.
@@ -76,8 +78,15 @@ server calls to get data or perform actions.
 - The user should be able to sign back in again from the sign-in page. On a
   successful sign in, the server should return a user object along with a
   freshly created access token.
+- If the user tries to access a secure page such as '/accounts' directly, and
+  they are not signed in to Bullsfirst, they should be redirected to the signin
+  page. After a successful sign in, they should be directed back to the accounts
+  page.
+- If the user tries to access a secure page such as '/accounts' directly, and
+  they are signed in to Bullsfirst, they should be shown the accounts page
+  without being redirected to the signin page.
 - Make sure you have good unit test coverage.
-- Update the authentication integration test verify the entire authentication
+- Update the authentication integration test to verify the entire authentication
   process, from sign-up to sign-out and sign-in.
 - Attach screenshots of the sign-up page to your pull request to show responsive
   behavior.
@@ -91,3 +100,10 @@ Version numbers noted are at the time of this writing.
 1. @apollo/client (3.3.13)
 2. graphql (15.5.0)
 3. react-icons (^4.2.0)
+
+# References
+
+The same authentication flow described in this exercise has been implemented in
+[accelerated-news](https://github.com/PublicisSapient/accelerated-news). The
+only difference is that accelerated-news uses REST instead of GraphQL, but the
+basic concepts still apply.

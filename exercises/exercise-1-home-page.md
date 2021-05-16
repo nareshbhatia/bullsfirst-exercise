@@ -7,8 +7,10 @@ Implement the home page as shown in the
 This is a responsive page and should look good on mobile, tablets and desktop.
 There is one breakpoint at 480px. Below this the content should be full width.
 Above this the content should be centered on the screen, with max-width of
-800px. In both cases there should be 24px of left and right padding. So the
-effective max-width for content on desktops is 800 - (2 * 24) = 752px.
+800px, however the neutral-light background on the header should extend from
+edge-to-edge of the page. In both cases there should be 24px of left and right
+padding. So the effective max-width for content on desktops is 800 - (2 * 24) =
+752px.
 
 ## General Guidelines
 

@@ -73,6 +73,10 @@ Key concepts to understand:
 2. [React Hook Form example with Yup validation](https://react-hook-form.com/get-started/#SchemaValidation)
 3. [Complex form example](https://github.com/nareshbhatia/form-examples)
 
+### GraphQL
+
+1. [GraphQL concepts I wish someone explained to me a year ago](https://medium.com/naresh-bhatia/graphql-concepts-i-wish-someone-explained-to-me-a-year-ago-514d5b3c0eab)
+
 ### React Testing Library
 
 1. [Introduction](https://testing-library.com/docs/)
