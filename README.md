@@ -29,8 +29,9 @@ According to
 
 1. [Home Page](exercises/exercise-1-home-page.md)
 2. [Sign-in Page](exercises/exercise-2-sign-in-page.md)
-3. [SideBar](exercises/exercise-3-sidebar.md)
-4. [Accounts Page](exercises/exercise-4-accounts-page.md)
+3. [Authentication](exercises/exercise-3-authentication.md)
+4. [SideBar](exercises/exercise-4-sidebar.md)
+5. [Accounts Page](exercises/exercise-5-accounts-page.md)
 
 ## Learning Resources
 
