@@ -97,9 +97,11 @@ server calls to get data or perform actions.
 
 Version numbers noted are at the time of this writing.
 
-1. @apollo/client (3.3.13)
+1. @apollo/client (3.3.18)
 2. graphql (15.5.0)
 3. react-icons (^4.2.0)
+4. uuid (8.3.2)
+5. @types/uuid (8.3.0) - dev dependency
 
 # References
 
