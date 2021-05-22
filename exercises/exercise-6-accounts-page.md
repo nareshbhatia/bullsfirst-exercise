@@ -1,4 +1,4 @@
-# Exercise 4: Accounts Page
+# Exercise 6: Accounts Page
 
 In this exercise, we will
 
@@ -11,17 +11,13 @@ In this exercise, we will
 5. We will add routing that allows the user to navigate from Sign-in page to the
    Accounts page on successful sign-in.
 6. The Accounts page will query the server to get all the accounts owned by the
-   user. We will use GraphQL for this step. Use
-   [Apollo GraphQL Client](https://www.apollographql.com/docs/react/) to send
-   GraphQL queries to the server.
-7. We will use [Mock Service Worker](https://mswjs.io/) to mock the GraphQL
-   server.
-8. Once the Accounts page receives a list of accounts from the server, it will
+   user.
+7. Once the Accounts page receives a list of accounts from the server, it will
    select the first account and show it in the Overview tab.
-9. Make sure you have good unit test coverage.
-10. Write an integration test using Cypress that starts from the Sign-in page
-    and navigates to the Accounts page.
-11. Attach a screenshot of your implementation to your pull request.
+8. Make sure you have good unit test coverage.
+9. Write an integration test using Cypress that starts from the Sign-in page and
+   navigates to the Accounts page.
+10. Attach a screenshot of your implementation to your pull request.
 
 ## Tips
 
@@ -58,34 +54,10 @@ component to create the 4 links on the Account page.
 
 ### Apollo GraphQL Client
 
-Set up Apollo GraphQL Client in src/index.tsx as follows:
+Note that Apollo GraphQL provider was set up in exercise 3.
 
-```typescript jsx
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-
-const client = new ApolloClient({
-  uri: 'https://localhost:8080',
-  cache: new InMemoryCache(),
-});
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Suspense fallback={<Loading />}>
-      <ErrorBoundary>
-        <ApolloProvider client={client}>
-          <Router>
-            <App />
-          </Router>
-        </ApolloProvider>
-      </ErrorBoundary>
-    </Suspense>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-```
-
-Then use the apollo client in src/features/Accounts/Accounts.tsx as shown below
-to fetch the accounts:
+For this exercise you need to query the server in
+src/features/Accounts/Accounts.tsx as shown below to fetch the accounts:
 
 ```typescript jsx
 import { useQuery, gql } from '@apollo/client';
@@ -139,12 +111,8 @@ export const Accounts = () => {
 
 ### Mock Service Worker
 
-Setup Mock Service Worker as described in the
-[docs](https://mswjs.io/docs/getting-started/install). During set up, choose the
-GraphQL and Browser options.
-
-Finally, add the following code to your MSW `handlers.js` file to mock the
-`GetAccounts` API:
+Add the following code to your MSW `handlers.js` file to mock the `GetAccounts`
+API:
 
 ```typescript jsx
 import { graphql } from 'msw';
