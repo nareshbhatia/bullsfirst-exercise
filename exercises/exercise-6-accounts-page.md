@@ -16,7 +16,11 @@ In this exercise, we will
    select the first account and show it in the Overview tab.
 8. Make sure you have good unit test coverage.
 9. Write an integration test using Cypress that starts from the Sign-in page and
-   navigates to the Accounts page.
+   navigates to the Accounts page. For this test, do not repeat the
+   authentication workflow in code. Create a Cypress command named
+   `signupJohnSmith` to signup and authenticate a user. See accelerated-news
+   example. The command is defined in `/cypress/support/commands`. This command
+   should be used in all tests that need to test an authenticated page.
 10. Attach a screenshot of your implementation to your pull request.
 
 ## Tips
