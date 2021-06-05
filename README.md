@@ -33,6 +33,7 @@ According to
 4. [Authentication - Sign Up](exercises/exercise-4-authentication-sign-up.md)
 5. [SideBar](exercises/exercise-5-sidebar.md)
 6. [Accounts Page](exercises/exercise-6-accounts-page.md)
+7. [Net Worth](exercises/exercise-7-net-worth.md)
 
 ## Learning Resources
 

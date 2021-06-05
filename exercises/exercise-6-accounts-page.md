@@ -128,14 +128,17 @@ export const handlers = [
       ctx.data({
         accounts: [
           {
+            __typename: 'Account',
             id: 'brokerage-account',
             name: 'Brokerage Account',
           },
           {
+            __typename: 'Account',
             id: 'retirement-account',
             name: 'Retirement Account',
           },
           {
+            __typename: 'Account',
             id: 'jennys-college-fund',
             name: "Jenny's College Fund",
           },

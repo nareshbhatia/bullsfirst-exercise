@@ -96,6 +96,17 @@ const authLink = setContext((_, { headers }) => {
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
+  defaultOptions: {
+    watchQuery: {
+      // Executes queries against both the cache and the GraphQL server.
+      // The query automatically updates if the result of the server-side
+      // query modifies the cached fields.
+      fetchPolicy: 'cache-and-network',
+    },
+    query: {
+      fetchPolicy: 'network-only',
+    },
+  },
 });
 
 ReactDOM.render(
