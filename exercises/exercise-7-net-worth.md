@@ -43,39 +43,33 @@ export const GET_NET_WORTH = gql`
   out `brokerage-account` as the accountId. For this, you will need to use
   react-router's `useParams()` hook.
 
-- Create a MSW handler to return different net worth information for each of the
-  3 accounts:
+- Create a MSW handler to return the net worth for a given account. Use the
+  following file to return the data (./data/net-worths):
 
-```ts
-const AccountId = {
-  BrokerageAccount: 'brokerage-account',
-  RetirementAccount: 'retirement-account',
-  JennysCollegeFund: 'jennys-college-fund',
-};
-
-const NetWorthInfo = {
-  [AccountId.BrokerageAccount]: {
-    __typename: 'NetWorthInfo',
-    id: AccountId.BrokerageAccount,
-    netWorth: 14500.12,
-    investments: 11000.12,
-    cash: 3500.0,
+```json
+[
+  {
+    "__typename": "NetWorthInfo",
+    "id": "brokerage-account",
+    "netWorth": 14500.12,
+    "investments": 11000.12,
+    "cash": 3500.0
   },
-  [AccountId.RetirementAccount]: {
-    __typename: 'NetWorthInfo',
-    id: AccountId.RetirementAccount,
-    netWorth: 10000.0,
-    investments: 8000.0,
-    cash: 2000.0,
+  {
+    "__typename": "NetWorthInfo",
+    "id": "retirement-account",
+    "netWorth": 10000.0,
+    "investments": 8000.0,
+    "cash": 2000.0
   },
-  [AccountId.JennysCollegeFund]: {
-    __typename: 'NetWorthInfo',
-    id: AccountId.JennysCollegeFund,
-    netWorth: 20000.0,
-    investments: 16000.0,
-    cash: 4000.0,
-  },
-};
+  {
+    "__typename": "NetWorthInfo",
+    "id": "jennys-college-fund",
+    "netWorth": 20000.0,
+    "investments": 16000.0,
+    "cash": 4000.0
+  }
+]
 ```
 
 - Create a Storybook story to test the NetWorth component. Make sure that the
@@ -96,7 +90,14 @@ export default {
 export const NetWorthStory = () => (
   <Router initialEntries={['/accounts/brokerage-account/overview']}>
     <Routes>
-      <Route path="/accounts/:accountId/overview" element={<NetWorth />} />
+      <Route
+        path="/accounts/:accountId/overview"
+        element={
+          <div className="paper border-paper">
+            <NetWorth />
+          </div>
+        }
+      />
     </Routes>
   </Router>
 );

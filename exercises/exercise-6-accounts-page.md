@@ -120,31 +120,34 @@ API:
 
 ```typescript jsx
 import { graphql } from 'msw';
+import accounts from './data/accounts.json';
 
 export const handlers = [
-  // ---- GetAccounts -----
-  graphql.query('GetAccounts', (req, res, ctx) => {
-    return res(
-      ctx.data({
-        accounts: [
-          {
-            __typename: 'Account',
-            id: 'brokerage-account',
-            name: 'Brokerage Account',
-          },
-          {
-            __typename: 'Account',
-            id: 'retirement-account',
-            name: 'Retirement Account',
-          },
-          {
-            __typename: 'Account',
-            id: 'jennys-college-fund',
-            name: "Jenny's College Fund",
-          },
-        ],
-      })
-    );
-  }),
+   /** get accounts */
+   graphql.query('GetAccounts', (req, res, ctx) => {
+      return res(ctx.data({ accounts }));
+   }),
 ];
+```
+
+Here's the data file (./data/accounts.json):
+
+```json
+[
+  {
+    "__typename": "Account",
+    "id": "brokerage-account",
+    "name": "Brokerage Account"
+  },
+  {
+    "__typename": "Account",
+    "id": "retirement-account",
+    "name": "Retirement Account"
+  },
+  {
+    "__typename": "Account",
+    "id": "jennys-college-fund",
+    "name": "Jenny's College Fund"
+  }
+]
 ```
