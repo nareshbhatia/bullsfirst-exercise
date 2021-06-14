@@ -1,0 +1,114 @@
+[
+  {
+    "__typename": "Holding",
+    "id": "holding-001",
+    "symbol": "TSLA",
+    "quantity": 300,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-002",
+    "symbol": "AAPL",
+    "quantity": 1000,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-003",
+    "symbol": "GOOG",
+    "quantity": 40,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-004",
+    "symbol": "AMZN",
+    "quantity": 30,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-005",
+    "symbol": "MSFT",
+    "quantity": 500,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-006",
+    "symbol": "EBAY",
+    "quantity": 1000,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-007",
+    "symbol": "CAKE",
+    "quantity": 1000,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-008",
+    "symbol": "MAR",
+    "quantity": 1000,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-09",
+    "symbol": "JPM",
+    "quantity": 300,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-010",
+    "symbol": "C",
+    "quantity": 800,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-011",
+    "symbol": "INTC",
+    "quantity": 3000,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-012",
+    "symbol": "MSI",
+    "quantity": 500,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-13",
+    "symbol": "AXP",
+    "quantity": 300,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-14",
+    "symbol": "BLK",
+    "quantity": 100,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-15",
+    "symbol": "ALL",
+    "quantity": 400,
+    "accountId": "brokerage-account"
+  },
+  {
+    "__typename": "Holding",
+    "id": "holding-016",
+    "symbol": "MRNA",
+    "quantity": 1000,
+    "accountId": "retirement-account"
+  }
+]

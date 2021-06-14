@@ -1,0 +1,50 @@
+[
+  {
+    "id": "industrials",
+    "name": "Industrials"
+  },
+  {
+    "id": "technology",
+    "name": "Technology"
+  },
+  {
+    "id": "consumer-defensive",
+    "name": "Consumer Defensive"
+  },
+  {
+    "id": "consumer-cyclical",
+    "name": "Consumer Cyclical"
+  },
+  {
+    "id": "financial-services",
+    "name": "Financial Services"
+  },
+  {
+    "id": "utilities",
+    "name": "Utilities"
+  },
+  {
+    "id": "healthcare",
+    "name": "Healthcare"
+  },
+  {
+    "id": "energy",
+    "name": "Energy"
+  },
+  {
+    "id": "business-services",
+    "name": "Business Services"
+  },
+  {
+    "id": "real-estate",
+    "name": "Real Estate"
+  },
+  {
+    "id": "basic-materials",
+    "name": "Basic Materials"
+  },
+  {
+    "id": "other",
+    "name": "Other"
+  }
+]

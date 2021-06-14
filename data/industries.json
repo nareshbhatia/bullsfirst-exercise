@@ -1,0 +1,377 @@
+[
+  {
+    "id": "industrial-products",
+    "name": "Industrial Products",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "business-services",
+    "name": "Business Services",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "engineering-construction",
+    "name": "Engineering & Construction",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "waste-management",
+    "name": "Waste Management",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "industrial-distribution",
+    "name": "Industrial Distribution",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "airlines",
+    "name": "Airlines",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "consulting-outsourcing",
+    "name": "Consulting & Outsourcing",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "aerospace-defense",
+    "name": "Aerospace & Defense",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "farm-construction-machinery",
+    "name": "Farm & Construction Machinery",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "transportation-logistics",
+    "name": "Transportation & Logistics",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "employment-services",
+    "name": "Employment Services",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "truck-manufacturing",
+    "name": "Truck Manufacturing",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "conglomerates",
+    "name": "Conglomerates",
+    "sectorId": "industrials"
+  },
+  {
+    "id": "computer-hardware",
+    "name": "Computer Hardware",
+    "sectorId": "technology"
+  },
+  {
+    "id": "online-media",
+    "name": "Online Media",
+    "sectorId": "technology"
+  },
+  {
+    "id": "application-software",
+    "name": "Application Software",
+    "sectorId": "technology"
+  },
+  {
+    "id": "semiconductors",
+    "name": "Semiconductors",
+    "sectorId": "technology"
+  },
+  {
+    "id": "communication-equipment",
+    "name": "Communication Equipment",
+    "sectorId": "technology"
+  },
+  {
+    "id": "retail-defensive",
+    "name": "Retail - Defensive",
+    "sectorId": "consumer-defensive"
+  },
+  {
+    "id": "consumer-packaged-goods",
+    "name": "Consumer Packaged Goods",
+    "sectorId": "consumer-defensive"
+  },
+  {
+    "id": "tobacco-products",
+    "name": "Tobacco Products",
+    "sectorId": "consumer-defensive"
+  },
+  {
+    "id": "beverages-alcoholic",
+    "name": "Beverages - Alcoholic",
+    "sectorId": "consumer-defensive"
+  },
+  {
+    "id": "beverages-non-alcoholic",
+    "name": "Beverages - Non-Alcoholic",
+    "sectorId": "consumer-defensive"
+  },
+  {
+    "id": "education",
+    "name": "Education",
+    "sectorId": "consumer-defensive"
+  },
+  {
+    "id": "entertainment",
+    "name": "Entertainment",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "retail-apparel-specialty",
+    "name": "Retail - Apparel & Specialty",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "restaurants",
+    "name": "Restaurants",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "manufacturing-apparel-furniture",
+    "name": "Manufacturing - Apparel & Furniture",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "autos",
+    "name": "Autos",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "advertising-marketing-services",
+    "name": "Advertising & Marketing Services",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "homebuilding-construction",
+    "name": "Homebuilding & Construction",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "travel-leisure",
+    "name": "Travel & Leisure",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "packaging-containers",
+    "name": "Packaging & Containers",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "personal-services",
+    "name": "Personal Services",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "publishing",
+    "name": "Publishing",
+    "sectorId": "consumer-cyclical"
+  },
+  {
+    "id": "asset-management",
+    "name": "Asset Management",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "banks",
+    "name": "Banks",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "brokers-exchanges",
+    "name": "Brokers & Exchanges",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "insurance-life",
+    "name": "Insurance - Life",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "insurance",
+    "name": "Insurance",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "insurance-property-casualty",
+    "name": "Insurance - Property & Casualty",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "credit-services",
+    "name": "Credit Services",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "insurance-specialty",
+    "name": "Insurance - Specialty",
+    "sectorId": "financial-services"
+  },
+  {
+    "id": "utilities-regulated",
+    "name": "Utilities - Regulated",
+    "sectorId": "utilities"
+  },
+  {
+    "id": "utilities-independent-power-producers",
+    "name": "Utilities - Independent Power Producers",
+    "sectorId": "utilities"
+  },
+  {
+    "id": "medical-diagnostics-research",
+    "name": "Medical Diagnostics & Research",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "biotechnology",
+    "name": "Biotechnology",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "medical-instruments-equipment",
+    "name": "Medical Instruments & Equipment",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "medical-devices",
+    "name": "Medical Devices",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "drug-manufacturers",
+    "name": "Drug Manufacturers",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "health-care-plans",
+    "name": "Health Care Plans",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "health-care-providers",
+    "name": "Health Care Providers",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "medical-distribution",
+    "name": "Medical Distribution",
+    "sectorId": "healthcare"
+  },
+  {
+    "id": "oil-gas-refining-marketing",
+    "name": "Oil & Gas - Refining & Marketing",
+    "sectorId": "energy"
+  },
+  {
+    "id": "oil-gas-e-p",
+    "name": "Oil & Gas - E&P",
+    "sectorId": "energy"
+  },
+  {
+    "id": "oil-gas-midstream",
+    "name": "Oil & Gas - Midstream",
+    "sectorId": "energy"
+  },
+  {
+    "id": "oil-gas-services",
+    "name": "Oil & Gas - Services",
+    "sectorId": "energy"
+  },
+  {
+    "id": "oil-gas-integrated",
+    "name": "Oil & Gas - Integrated",
+    "sectorId": "energy"
+  },
+  {
+    "id": "oil-gas-drilling",
+    "name": "Oil & Gas - Drilling",
+    "sectorId": "energy"
+  },
+  {
+    "id": "alternative-energy-sources",
+    "name": "Alternative Energy Sources & Other",
+    "sectorId": "energy"
+  },
+  {
+    "id": "communication-services",
+    "name": "Communication Services",
+    "sectorId": "business-services"
+  },
+  {
+    "id": "consulting",
+    "name": "Consulting",
+    "sectorId": "business-services"
+  },
+  {
+    "id": "hr-staffing",
+    "name": "HR & Staffing",
+    "sectorId": "business-services"
+  },
+  {
+    "id": "business-services-other",
+    "name": "Other",
+    "sectorId": "business-services"
+  },
+  {
+    "id": "reits",
+    "name": "REITs",
+    "sectorId": "real-estate"
+  },
+  {
+    "id": "real-estate-services",
+    "name": "Real Estate Services",
+    "sectorId": "real-estate"
+  },
+  {
+    "id": "chemicals",
+    "name": "Chemicals",
+    "sectorId": "basic-materials"
+  },
+  {
+    "id": "forest-products",
+    "name": "Forest Products",
+    "sectorId": "basic-materials"
+  },
+  {
+    "id": "agriculture",
+    "name": "Agriculture",
+    "sectorId": "basic-materials"
+  },
+  {
+    "id": "metals-mining",
+    "name": "Metals & Mining",
+    "sectorId": "basic-materials"
+  },
+  {
+    "id": "building-materials",
+    "name": "Building Materials",
+    "sectorId": "basic-materials"
+  },
+  {
+    "id": "coal",
+    "name": "Coal",
+    "sectorId": "basic-materials"
+  },
+  {
+    "id": "steel",
+    "name": "Steel",
+    "sectorId": "basic-materials"
+  },
+  {
+    "id": "diversified-holdings",
+    "name": "Diversified Holdings",
+    "sectorId": "other"
+  },
+  {
+    "id": "other-unknown",
+    "name": "Unknown",
+    "sectorId": "other"
+  }
+]
