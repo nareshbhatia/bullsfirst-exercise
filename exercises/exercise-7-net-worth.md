@@ -4,8 +4,8 @@ In this exercise, we will create the Net Worth component on the Overview tab.
 
 - Create a skeleton of the Overview tab as show in the
   [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
-  Create placeholders for _Net Worth_, _Asset Allocation_ and _Performance_
-  components.
+  Create placeholders for `NetWorth`, `AssetAllocationChart` and
+  `PerformanceChart` components.
 
 - Create a model under /src/models/NetWorthInfo.ts as follows:
 
