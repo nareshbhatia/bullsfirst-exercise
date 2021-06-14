@@ -36,13 +36,13 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/signin" element={<SignIn />} />
-      <Route path="/signup" element={<SignUp />} />
       <Route path="/accounts" element={<Accounts />}>
-        <Route path=":accountId" element={<Account />}>
+        <Route path=":accountId" element={<AccountView />}>
           <Route path="overview" element={<Overview />} />
         </Route>
       </Route>
+      <Route path="/signin" element={<SignIn />} />
+      <Route path="/signup" element={<SignUp />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
@@ -65,6 +65,11 @@ src/features/Accounts/Accounts.tsx as shown below to fetch the accounts:
 
 ```typescript jsx
 import { useQuery, gql } from '@apollo/client';
+import { Account } from '../../models';
+
+interface AccountsData {
+  accounts: Array<Account>;
+}
 
 const GET_ACCOUNTS = gql`
   query GetAccounts {
@@ -74,15 +79,6 @@ const GET_ACCOUNTS = gql`
     }
   }
 `;
-
-interface Account {
-  id: string;
-  name: string;
-}
-
-interface AccountsData {
-  accounts: Array<Account>;
-}
 
 export const Accounts = () => {
   const { loading, error, data } = useQuery<AccountsData>(GET_ACCOUNTS);
@@ -123,31 +119,13 @@ import { graphql } from 'msw';
 import accounts from './data/accounts.json';
 
 export const handlers = [
-   /** get accounts */
-   graphql.query('GetAccounts', (req, res, ctx) => {
-      return res(ctx.data({ accounts }));
-   }),
+  /** get accounts */
+  graphql.query('GetAccounts', (req, res, ctx) => {
+    return res(ctx.data({ accounts }));
+  }),
 ];
 ```
 
-Here's the data file (./data/accounts.json):
-
-```json
-[
-  {
-    "__typename": "Account",
-    "id": "brokerage-account",
-    "name": "Brokerage Account"
-  },
-  {
-    "__typename": "Account",
-    "id": "retirement-account",
-    "name": "Retirement Account"
-  },
-  {
-    "__typename": "Account",
-    "id": "jennys-college-fund",
-    "name": "Jenny's College Fund"
-  }
-]
-```
+Copy the `/data` folder from this repo to your bullsfirst client repo at
+`/src/mocks/data`. This folder contains sample data for the Bullsfirst
+application including the `accounts.json` file imported above.

@@ -11,7 +11,6 @@ In this exercise, we will create the Net Worth component on the Overview tab.
 
 ```ts
 export interface NetWorthInfo {
-  id: string; // account id
   netWorth: number;
   investments: number;
   cash: number;
@@ -44,33 +43,7 @@ export const GET_NET_WORTH = gql`
   react-router's `useParams()` hook.
 
 - Create a MSW handler to return the net worth for a given account. Use the
-  following file to return the data (./data/net-worths):
-
-```json
-[
-  {
-    "__typename": "NetWorthInfo",
-    "id": "brokerage-account",
-    "netWorth": 14500.12,
-    "investments": 11000.12,
-    "cash": 3500.0
-  },
-  {
-    "__typename": "NetWorthInfo",
-    "id": "retirement-account",
-    "netWorth": 10000.0,
-    "investments": 8000.0,
-    "cash": 2000.0
-  },
-  {
-    "__typename": "NetWorthInfo",
-    "id": "jennys-college-fund",
-    "netWorth": 20000.0,
-    "investments": 16000.0,
-    "cash": 4000.0
-  }
-]
-```
+  sample data under `/src/mocks/data` to compute the net worth.
 
 - Create a Storybook story to test the NetWorth component. Make sure that the
   story is able to get an `accountId` from the router to make the NetWorth
