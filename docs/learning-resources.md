@@ -42,6 +42,13 @@ Key concepts to understand:
 
 1. [GraphQL concepts I wish someone explained to me a year ago](https://medium.com/naresh-bhatia/graphql-concepts-i-wish-someone-explained-to-me-a-year-ago-514d5b3c0eab)
 
+## Highcharts
+
+1. [Documentation](https://www.highcharts.com/docs/index)
+2. [API](https://api.highcharts.com/highcharts/)
+3. [Examples](https://www.highcharts.com/demo)
+4. [Pie chart with drilldown](https://www.highcharts.com/demo/pie-drilldown)
+
 ## React Testing Library
 
 1. [Introduction](https://testing-library.com/docs/)

@@ -109,6 +109,16 @@ export const Accounts = () => {
 };
 ```
 
+The `Account` model referenced on line 2 above should be set up as follows in
+`/src/models/Account.ts`:
+
+```ts
+export interface Account {
+  id: string;
+  name: string;
+}
+```
+
 ### Mock Service Worker
 
 Add the following code to your MSW `handlers.js` file to mock the `GetAccounts`
