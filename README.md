@@ -35,6 +35,7 @@ According to
 6. [Accounts Page](exercises/exercise-6-accounts-page.md)
 7. [Net Worth](exercises/exercise-7-net-worth.md)
 8. [Asset Allocation Chart](exercises/exercise-8-asset-allocation-chart.md)
+9. [Performance Chart](exercises/exercise-9-performance-chart.md)
 
 ## Learning Resources
 

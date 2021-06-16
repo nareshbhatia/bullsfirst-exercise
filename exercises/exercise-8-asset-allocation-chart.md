@@ -218,9 +218,9 @@ make any assumptions about how this data is to be presented.
 - Once we have asset allocations from the server, we need to break down that
   structure into what is needed by the `PieChart` component, essentially a
   `series` and a `drilldown`. Write two top-level functions (outside the React
-  component) in the AssetAllocationChart.tsx file to transform the server
-  structure into what is needed by `PieChart`. We are intentionally not
-  embedding this logic into the component so that it is easier to test.
+  component) in the AssetAllocationChart.tsx file to do this. We are
+  intentionally not embedding this logic into the component so that it is easier
+  to test.
 
 ```ts
 export function computePieSeries(sectorAllocations: Array<AssetAllocation>) {
@@ -230,7 +230,6 @@ export function computePieSeries(sectorAllocations: Array<AssetAllocation>) {
 export function computePieDrilldown(sectorAllocations: Array<AssetAllocation>) {
   ...
 }
-
 ```
 
 - Write tests for the above two functions.
