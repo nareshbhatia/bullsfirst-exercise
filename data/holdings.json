@@ -57,7 +57,7 @@
   },
   {
     "__typename": "Holding",
-    "id": "holding-09",
+    "id": "holding-009",
     "symbol": "JPM",
     "quantity": 300,
     "accountId": "brokerage-account"
@@ -85,21 +85,21 @@
   },
   {
     "__typename": "Holding",
-    "id": "holding-13",
+    "id": "holding-013",
     "symbol": "AXP",
     "quantity": 300,
     "accountId": "brokerage-account"
   },
   {
     "__typename": "Holding",
-    "id": "holding-14",
+    "id": "holding-014",
     "symbol": "BLK",
     "quantity": 100,
     "accountId": "brokerage-account"
   },
   {
     "__typename": "Holding",
-    "id": "holding-15",
+    "id": "holding-015",
     "symbol": "ALL",
     "quantity": 400,
     "accountId": "brokerage-account"
