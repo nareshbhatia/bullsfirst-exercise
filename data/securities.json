@@ -61,7 +61,7 @@
   },
   {
     "id": "AAPL",
-    "name": "APPLE INC",
+    "name": "Apple Inc",
     "price": 127.13,
     "industryId": "computer-hardware"
   },
@@ -811,7 +811,7 @@
   },
   {
     "id": "ALL",
-    "name": "ALLSTATE CORP",
+    "name": "Allstate Corp",
     "price": 133.03,
     "industryId": "insurance-property-casualty"
   },
@@ -1051,7 +1051,7 @@
   },
   {
     "id": "AMZN",
-    "name": "AMAZON COM INC",
+    "name": "Amazon.com, Inc.",
     "price": 3281.15,
     "industryId": "retail-apparel-specialty"
   },
@@ -1669,7 +1669,7 @@
   },
   {
     "id": "AXP",
-    "name": "AMERICAN EXPRESS CO",
+    "name": "American Express Company",
     "price": 164.09,
     "industryId": "credit-services"
   },
@@ -2497,7 +2497,7 @@
   },
   {
     "id": "C",
-    "name": "CITIGROUP INC",
+    "name": "Citigroup Inc",
     "price": 78.14,
     "industryId": "banks"
   },
@@ -2545,7 +2545,7 @@
   },
   {
     "id": "CAKE",
-    "name": "CHEESECAKE FACTORY INC",
+    "name": "Cheesecake Factory Inc",
     "price": 61.61,
     "industryId": "restaurants"
   },
@@ -4705,31 +4705,31 @@
   },
   {
     "id": "EBAY",
-    "name": "EBAY INC",
+    "name": "eBay Inc",
     "price": 65.96,
     "industryId": "retail-apparel-specialty"
   },
   {
     "id": "EBF",
-    "name": "ENNIS, INC.",
+    "name": "Ennis, Inc.",
     "price": 21.52,
     "industryId": "industrial-products"
   },
   {
     "id": "EBIX",
-    "name": "EBIX INC",
+    "name": "Ebix Inc",
     "price": 34.78,
     "industryId": "application-software"
   },
   {
     "id": "EBS",
-    "name": "Emergent BioSolutions Inc.",
+    "name": "Emergent Biosolutions Inc",
     "price": 65.06,
     "industryId": "drug-manufacturers"
   },
   {
     "id": "ECA",
-    "name": "ENCANA CORP",
+    "name": "Encana Corporation",
     "price": 30.95,
     "industryId": "oil-gas-e-p"
   },
@@ -4741,7 +4741,7 @@
   },
   {
     "id": "ECYT",
-    "name": "ENDOCYTE INC",
+    "name": "Endocyte Inc",
     "price": 23.99,
     "industryId": "biotechnology"
   },
@@ -6391,7 +6391,7 @@
   },
   {
     "id": "GOOG",
-    "name": "Alphabet (Google)",
+    "name": "Alphabet Inc.",
     "price": 2491.4,
     "industryId": "online-media"
   },
@@ -7447,7 +7447,7 @@
   },
   {
     "id": "INTC",
-    "name": "INTEL CORP",
+    "name": "Intel Corporation",
     "price": 57,
     "industryId": "semiconductors"
   },
@@ -7879,7 +7879,7 @@
   },
   {
     "id": "JPM",
-    "name": "JPMORGAN CHASE & CO",
+    "name": "JPMorgan Chase & Co.",
     "price": 162.94,
     "industryId": "banks"
   },
@@ -8887,7 +8887,7 @@
   },
   {
     "id": "MAR",
-    "name": "MARRIOTT INTERNATIONAL INC /MD/",
+    "name": "Marriott International Inc",
     "price": 143.82,
     "industryId": "travel-leisure"
   },
@@ -9529,7 +9529,7 @@
   },
   {
     "id": "MRNA",
-    "name": "Moderna, Inc.",
+    "name": "Moderna Inc",
     "price": 217.44,
     "industryId": "biotechnology"
   },
@@ -9589,7 +9589,7 @@
   },
   {
     "id": "MSFT",
-    "name": "MICROSOFT CORP",
+    "name": "Microsoft Corporation",
     "price": 253.59,
     "industryId": "application-software"
   },
@@ -9607,7 +9607,7 @@
   },
   {
     "id": "MSI",
-    "name": "Motorola Solutions, Inc.",
+    "name": "Motorola Solutions Inc",
     "price": 209.12,
     "industryId": "communication-equipment"
   },
@@ -14209,7 +14209,7 @@
   },
   {
     "id": "TSLA",
-    "name": "Tesla",
+    "name": "Tesla Inc",
     "price": 598.78,
     "industryId": "autos"
   },
