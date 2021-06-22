@@ -25,7 +25,7 @@ According to
 
 ![Bullsfirst Domain Model](docs/domain-model-1.png)
 
-### Bullsfirst Model Objects
+### Model Objects
 
 ![Bullsfirst Domain Model](docs/domain-model-2.png)
 
