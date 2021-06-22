@@ -23,7 +23,11 @@ According to
 
 ### Bullsfirst Domain Model
 
-![Bullsfirst Domain Model](docs/domain-model.png)
+![Bullsfirst Domain Model](docs/domain-model-1.png)
+
+### Bullsfirst Model Objects
+
+![Bullsfirst Domain Model](docs/domain-model-2.png)
 
 ## Exercises
 
