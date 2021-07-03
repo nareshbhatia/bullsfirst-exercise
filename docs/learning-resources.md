@@ -21,11 +21,12 @@ Key concepts to understand:
 ## React
 
 1. [React documentation](https://reactjs.org/docs/getting-started.html)
-2. [React - The Complete Guide - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
-3. [React and Typescript](https://sapient.udemy.com/course/react-and-typescript-build-a-portfolio-project/)
-4. [Dan Abramov's Blog](https://overreacted.io/)
-5. [Kent Dodd's Blog](https://kentcdodds.com/)
-6. [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)
+2. [Recommended Folder Structure](https://github.com/PublicisSapient/cra-template-accelerate/blob/main/template/docs/folder-structure.md)
+3. [React - The Complete Guide - Udemy](https://www.udemy.com/course/react-the-complete-guide-incl-redux/)
+4. [React and Typescript](https://sapient.udemy.com/course/react-and-typescript-build-a-portfolio-project/)
+5. [Dan Abramov's Blog](https://overreacted.io/)
+6. [Kent Dodd's Blog](https://kentcdodds.com/)
+7. [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)
 
 ## React Router
 
