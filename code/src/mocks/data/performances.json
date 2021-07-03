@@ -3,6 +3,7 @@
     "id": "brokerage-account",
     "performance": [
       {
+        "__typename": "Series",
         "name": "Brokerage Account",
         "data": [
           { "x": 2015, "y": 0 },
@@ -15,6 +16,7 @@
         ]
       },
       {
+        "__typename": "Series",
         "name": "S&P 500",
         "data": [
           { "x": 2015, "y": 0 },
@@ -32,6 +34,7 @@
     "id": "retirement-account",
     "performance": [
       {
+        "__typename": "Series",
         "name": "Retirement Account",
         "data": [
           { "x": 2020, "y": 0 },
@@ -39,6 +42,7 @@
         ]
       },
       {
+        "__typename": "Series",
         "name": "S&P 500",
         "data": [
           { "x": 2020, "y": 0 },
@@ -51,10 +55,12 @@
     "id": "jennys-college-fund",
     "performance": [
       {
+        "__typename": "Series",
         "name": "Jenny's College Fund",
         "data": [{ "x": 2021, "y": 0 }]
       },
       {
+        "__typename": "Series",
         "name": "S&P 500",
         "data": [{ "x": 2021, "y": 0 }]
       }

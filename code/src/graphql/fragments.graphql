@@ -1,0 +1,56 @@
+fragment UserFields on User {
+  id
+  name
+  email
+}
+
+fragment UserInfoFields on UserInfo {
+  user {
+    id
+    name
+    email
+  }
+  accessToken
+}
+
+fragment AccountFields on Account {
+  id
+  name
+}
+
+fragment NetWorthFields on Account {
+  investmentTotal
+  cashBalance
+}
+
+fragment AssetAllocationFields on AssetAllocation {
+  categoryId
+  categoryName
+  value
+  percentage
+  children {
+    categoryId
+    categoryName
+    value
+    percentage
+  }
+}
+
+fragment HoldingFields on Holding {
+  id
+  quantity
+  value
+  security {
+    id
+    name
+    price
+  }
+}
+
+fragment SeriesFields on Series {
+  name
+  data {
+    x
+    y
+  }
+}
