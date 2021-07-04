@@ -1,0 +1,5 @@
+mutation SignIn($credentials: Credentials!) {
+  signIn(credentials: $credentials) {
+    ...UserInfoFields
+  }
+}

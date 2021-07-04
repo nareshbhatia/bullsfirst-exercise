@@ -1,22 +1,35 @@
 # Exercise 3: Authentication - Sign In
 
-This exercise implements user authentication using access tokens. Here we will
-implement the sign-in portion of the authentication workflow. The next exercise
-will implement the sign-up workflow.
+This exercise implements user authentication using access tokens. For now, we
+will implement the sign-in portion of the authentication workflow. The next
+exercise will implement the sign-up workflow.
 
-This exercise also introduces GraphQL to make server calls. We will use
-[Apollo GraphQL Client](https://www.apollographql.com/docs/react/) for this.
+We will use GraphQL to make server calls. To accomplish this, we will introduce
+a number of GraphQL tools and libraries:
 
-In addition, we will use the [Mock Service Worker](https://mswjs.io/) library to
-mock the GraphQL calls to the server.
+1. The React app will use
+   [Apollo GraphQL Client](https://www.apollographql.com/docs/react/) to make
+   server calls.
+2. We will use the [Mock Service Worker](https://mswjs.io/) library to mock the
+   GraphQL server.
+3. We will shift from manually coding model objects to auto-generating them from
+   the GraphQL schema. For this we will use the
+   [GraphQL Code Generator](https://www.graphql-code-generator.com/).
 
-# Authentication Workflow
+Before diving into the implementation, let's understand the authentication
+workflow using access tokens.
 
-The Bullsfirst server identifies its users by their email address. It also knows
-every user's full name. Here's the data structure for a Bullsfirst user:
+## Authentication Workflow
+
+The Bullsfirst server identifies its users by their email address. In addition,
+it creates a unique identifier for every new user when they sign up. This gives
+users the ability to change their email address without losing their account
+data. Lastly, Bullsfirst knows every user's full name. Here's the data structure
+for a Bullsfirst user:
 
 ```ts
 export interface User {
+  id: string;
   email: string;
   name: string;
 }
@@ -24,12 +37,14 @@ export interface User {
 
 Users can sign up with the Bullsfirst server by providing three pieces of
 information: their email address, full name and a password. Here's the data
-structure that defines the sign-up information:
+structure that defines the sign-up input:
 
 ```ts
-export interface UserInfo extends User {
-  password: string;
-}
+export type SignUpInput = {
+  email: Scalars['String'];
+  name: Scalars['String'];
+  password: Scalars['String'];
+};
 ```
 
 Once a user is signed up, they can signin to Bullsfirst using their credentials:
@@ -41,8 +56,17 @@ export interface Credentials {
 }
 ```
 
-If the email and password match, the server returns the user object along with a
-unique access token as shown below:
+If the email and password match, the server returns a `UserInfo` object
+consisting of the user object along with a unique access token:
+
+```ts
+export type UserInfo = {
+  user: User;
+  accessToken: Scalars['String'];
+};
+```
+
+Here's an example of the UserInfo object:
 
 ```json
 {
@@ -54,7 +78,7 @@ unique access token as shown below:
 }
 ```
 
-The client should save the access token in localStorage and send it in the
+The client should save the access token in localStorage and send it back in the
 request header for all future requests. This tells the server which user is
 sending the request. Here's what the `Authorization` header should look like:
 
@@ -65,20 +89,87 @@ authorization: Bearer 2c2977af-401e-47f2-a867-840ce9760572
 Finally, when the user signs out, the server discards the access token. The
 client can no longer make requests using the same access token.
 
-The Bullsfirst client will save the access token in localStorage. When the
-client starts up, and it finds the access token in localStorage, there is no
-need to sign in to the sever. The SignIn page should automatically redirect to
-the Accounts page. The saved access token can be used in server calls to get
-account data or perform any actions.
+As mentioned above, the Bullsfirst client saves the access token in
+localStorage. When the client starts up, and it finds the access token in
+localStorage, there is no need to sign in to the sever. The SignIn page should
+automatically redirect to the Accounts page. The saved access token can be used
+in server calls to get account data and perform actions.
 
-## Adding Authentication to the SignIn Page
+## Implementing authentication
 
-- Start with adding an `ApolloProvider` in index.tsx. See below. Note that
-  `authlink` is configured to send an `authorization` header in any request if
-  localStorage has a previously saved access token. You can find further details
-  [here](https://www.apollographql.com/docs/react/networking/authentication/#header).
+- Start by adding the following modules to Bullsfirst client:
+
+```sh
+npm install graphql @apollo/client react-icons uuid
+npm install --save-dev @types/uuid @graphql-codegen/cli @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations
+
+# or
+
+yarn add graphql @apollo/client react-icons uuid
+yarn add -D @types/uuid @graphql-codegen/cli @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations
+```
+
+- Add the following script to the `scripts` section in package.json:
+
+```json
+"graphql:codegen": "graphql-codegen --config codegen.yml",
+```
+
+- Create a new file at /src/models/User.ts and add the user model to it:
 
 ```ts
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+}
+```
+
+- Rest of the models will be generated from the GraphQL schema and operations.
+  To accomplish this, copy the following files from this repo to your Bullsfirst
+  repo. Note that the `/code` folder in this repo is structured to mimic the
+  root folder of your Bullsfirst repo.
+
+  - Copy `/code/schema.graphql` to the root folder in your repo. This is the
+    GraphQL schema for the Bullsfirst app which will normally be provided by the
+    GraphQL server.
+  - Copy '/code/src/pages/SignInPage/SignInPage.query.graphql' to your repo.
+    This is the GraphQL mutation for signing in. Note that this mutation uses a
+    "fragment" called `UserInfoFields` as the return value from the mutation. We
+    will copy the definition of this fragment in the next step.
+  - Copy '/code/src/graphql/fragments.graphql' to your repo. This file defines
+    the `UserInfoFields` fragment and several other fragments that will be user
+    in subsequent exercises.
+  - Copy `/code/codegen.yml` to the root folder in your repo. This file
+    specifies the code-generation configuration.
+
+- Now generate TypeScript code based on the files added above.
+
+```sh
+npm run graphql:codegen
+
+# or
+
+yarn graphql:codegen
+```
+
+- The above step generated the following file in your repo:
+  `/src/graphql/generated.ts`. Review the code in this file. It contains
+  TypeScript types and other structures that we will use to execute GraphQL
+  queries and mutations.
+
+- One of the types generated in the above file is `Credentials` because it is
+  defined in the GraphQL schema. So we no longer need the manually defined type
+  with the same name at `/src/models/Credentials.ts`. Go ahead and delete that
+  file.
+
+- Now let's set up the Apollo Client library to make server calls. Start by
+  adding an `ApolloProvider` in index.tsx. See below. Note that `authlink` is
+  configured to send an `authorization` header in any request if localStorage
+  has a previously saved access token. You can find further details
+  [here](https://www.apollographql.com/docs/react/networking/authentication/#header).
+
+```tsx
 // Create Apollo client
 const env = new WindowEnv();
 const httpLink = createHttpLink({
@@ -132,46 +223,24 @@ ReactDOM.render(
 - Currently, the `handleSubmit()` method of the SignIn page redirects directly
   to the Accounts page without doing any authentication. Let's change that.
   `handleSubmit()` should now make a server call to sign in and get an access
-  token. See below:
+  token. This server call is a GraphQL mutation that was defined in
+  `SignInPage.query.graphql` amd was generated in `/src/graphql/generated.ts`.
+  The code below imports the generated mutation and calls it in `handleSubmit`:
 
-```ts
-const handleSubmit = async (credentials: Credentials) => {
-  await signIn({ variables: { credentials } });
+```tsx
+import { useMutation } from '@apollo/client';
+import { Credentials, SignInDocument } from '../../graphql/generated';
+
+export const SignInPage = () => {
+  ...
+  const [signIn, { data, error }] = useMutation(SignInDocument);
+  const signInError = error ? error.message : undefined;
+
+  const handleSubmit = async (credentials: Credentials) => {
+    await signIn({ variables: { credentials } });
+  };
+  ...
 };
-```
-
-- `signIn()` makes a GraphQL call to the server. To get started with this call,
-  add the following mutation just above your `SignIn` component in `SignIn.tsx`:
-
-```ts
-const SIGN_IN = gql`
-  mutation SignIn($credentials: Credentials) {
-    signIn(credentials: $credentials) {
-      user {
-        name
-        email
-      }
-      accessToken
-    }
-  }
-`;
-```
-
-For more information on GraphQL queries and mutations, you can refer to the
-following docs:
-
-1. [Queries](https://www.apollographql.com/docs/react/data/queries/)
-2. [Mutations](https://www.apollographql.com/docs/react/data/mutations/)
-3. [The Query and Mutation types](https://graphql.org/learn/schema/#the-query-and-mutation-types)
-
-- Now within the `SignIn` component, call the `useMutation` hook to get the
-  `signIn` method that calls the GraphQL API, as well as the data and error
-  returned by that API. Note that the `signIn` method is what you will be
-  calling in the `handleSubmit()` method.
-
-```ts
-const [signIn, { data, error }] = useMutation(SIGN_IN);
-const signInError = error ? error.message : undefined;
 ```
 
 - If the `signIn` call to the server is successful (i.e. email and password
@@ -232,6 +301,7 @@ graphql.mutation('SignIn', (req, res, ctx) => {
   return res(
     ctx.data({
       signIn: {
+        __typename: 'UserInfo',
         user: {
           name: 'John Smith',
           email: 'jsmith@example.com',
@@ -272,19 +342,16 @@ Finally,
 - Update the authentication integration test to verify that the signin workflow
   is working correctly.
 
-## Dependencies
-
-Version numbers noted are at the time of this writing.
-
-1. @apollo/client (3.3.18)
-2. graphql (15.5.0)
-3. react-icons (^4.2.0)
-4. uuid (8.3.2)
-5. @types/uuid (8.3.0) - dev dependency
-
-# References
+## References
 
 The same authentication flow described in this exercise has been implemented in
 [accelerated-news](https://github.com/PublicisSapient/accelerated-news). The
 only difference is that accelerated-news uses REST instead of GraphQL, but the
 basic concepts still apply.
+
+For more information on GraphQL queries and mutations, you can refer to the
+following docs:
+
+1. [Queries](https://www.apollographql.com/docs/react/data/queries/)
+2. [Mutations](https://www.apollographql.com/docs/react/data/mutations/)
+3. [The Query and Mutation types](https://graphql.org/learn/schema/#the-query-and-mutation-types)
