@@ -92,7 +92,7 @@ const drilldown = {
   minimum, check to see if the expected number of pies are being rendered. See
   below:
 
-```ts
+```tsx
 test('PieChart renders correctly', () => {
   const { container } = render(
     <PieChart
