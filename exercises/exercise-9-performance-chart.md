@@ -10,35 +10,22 @@ time.
 - As part of the previous exercise, we already have a placeholder
   `PerformanceChart`.
 
-- Create a `Series` model under `/src/models/Series.ts`. This structure models a
-  named series with multiple data points. We will download two such series from
-  the server, representing the performance of the investors account vs that of
-  S&P 500.
+- Copy the GraphQL query from
+  `/code/src/pages/AccountsPage/Overview/PerformanceChart.query.graphql` to your
+  repo. Note that this query passes in an `accountId` as the parameter and
+  receives two `SeriesFields` in return - one for the account and another for
+  S&P 500. Note that `Series` consists of a name and the data associated with
+  the series. Here's the GraphQL type definition for it:
 
-```ts
-// ----- Series.ts -----
-/**
- * Defines a series of data points.
- *
- * Example:
- * {
- *   name: 'Brokerage Account',
- *   data: [
- *     {x: 2015, y: 0},
- *     {x: 2016, y: -4.7},
- *     {x: 2017, y: 24.5}
- *   ]
- * }
- */
-
-export interface DataPoint {
-  x: number;
-  y: number;
+```graphql
+type Series {
+  name: String!
+  data: [DataPoint!]!
 }
 
-export interface Series {
-  name: string;
-  data: Array<DataPoint>;
+type DataPoint {
+  x: Float!
+  y: Float!
 }
 ```
 
@@ -93,30 +80,10 @@ const series = [
   minimum, check to see if the expected number of lines are being rendered.
 
 - Now let's focus on implementing the `PerformanceChart` component using our
-  reusable `LineChart` component. Create a GraphQL query in the PerformanceChart
-  component to fetch account performance from the server. Note that the query
-  passes in an `accountId` as the parameter and receives an array of two series
-  in return.
-
-```ts
-interface AccountPerformanceData {
-  accountPerformance: Array<Series>;
-}
-
-export const GET_ACCOUNT_PERFORMANCE = gql`
-  query GetAccountPerformance($accountId: ID!) {
-    accountPerformance(id: $accountId) {
-      name
-      data {
-        x
-        y
-      }
-    }
-  }
-`;
-```
-
-See sample data returned from the server in `src/mocks/data/performances.json`.
+  reusable `LineChart` component. Execute the `GetAccountPerformance` query in
+  the PerformanceChart component. Note that the query passes in an `accountId`
+  as the parameter and receives an array of two series in return. See sample
+  data returned from the server in `src/mocks/data/performances.json`.
 
 - The PerformanceChart component should grab the accountId from the URL of the
   page. This is the exact same pattern as that used in the NetWorth component.
