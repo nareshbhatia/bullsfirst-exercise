@@ -41,9 +41,9 @@ structure that defines the sign-up input:
 
 ```ts
 export type SignUpInput = {
-  email: Scalars['String'];
-  name: Scalars['String'];
-  password: Scalars['String'];
+  email: string;
+  name: string;
+  password: string;
 };
 ```
 
@@ -62,7 +62,7 @@ consisting of the user object along with a unique access token:
 ```ts
 export type UserInfo = {
   user: User;
-  accessToken: Scalars['String'];
+  accessToken: string;
 };
 ```
 
@@ -71,6 +71,7 @@ Here's an example of the UserInfo object:
 ```json
 {
   "user": {
+    "id": "8c8726cb-7f8a-4ebd-b5ec-3ea5a2c144ab",
     "name": "John Smith",
     "email": "jsmith@example.com"
   },
@@ -115,7 +116,7 @@ yarn add -D @types/uuid @graphql-codegen/cli @graphql-codegen/typed-document-nod
 "graphql:codegen": "graphql-codegen --config codegen.yml",
 ```
 
-- Create a new file at /src/models/User.ts and add the user model to it:
+- Create a new file at `/src/models/User.ts` and add the user model to it:
 
 ```ts
 export interface User {
@@ -133,12 +134,12 @@ export interface User {
   - Copy `/code/schema.graphql` to the root folder in your repo. This is the
     GraphQL schema for the Bullsfirst app which will normally be provided by the
     GraphQL server.
-  - Copy '/code/src/pages/SignInPage/SignInPage.query.graphql' to your repo.
+  - Copy `/code/src/pages/SignInPage/SignInPage.query.graphql` to your repo.
     This is the GraphQL mutation for signing in. Note that this mutation uses a
-    "fragment" called `UserInfoFields` as the return value from the mutation. We
-    will copy the definition of this fragment in the next step.
-  - Copy '/code/src/graphql/fragments.graphql' to your repo. This file defines
-    the `UserInfoFields` fragment and several other fragments that will be user
+    GraphQL _fragment_ called `UserInfoFields` as the return value from the
+    mutation. We will copy the definition of this fragment in the next step.
+  - Copy `/code/src/graphql/fragments.graphql` to your repo. This file defines
+    the `UserInfoFields` fragment and several other fragments that will be used
     in subsequent exercises.
   - Copy `/code/codegen.yml` to the root folder in your repo. This file
     specifies the code-generation configuration.
@@ -153,13 +154,13 @@ npm run graphql:codegen
 yarn graphql:codegen
 ```
 
-- The above step generated the following file in your repo:
+- The above step generates the following file in your repo:
   `/src/graphql/generated.ts`. Review the code in this file. It contains
   TypeScript types and other structures that we will use to execute GraphQL
   queries and mutations.
 
-- One of the types generated in the above file is `Credentials` because it is
-  defined in the GraphQL schema. So we no longer need the manually defined type
+- One of the types generated in the above file is `Credentials` (because it was
+  defined in the GraphQL schema). So we no longer need the manually defined type
   with the same name at `/src/models/Credentials.ts`. Go ahead and delete that
   file.
 
@@ -224,8 +225,8 @@ ReactDOM.render(
   to the Accounts page without doing any authentication. Let's change that.
   `handleSubmit()` should now make a server call to sign in and get an access
   token. This server call is a GraphQL mutation that was defined in
-  `SignInPage.query.graphql` amd was generated in `/src/graphql/generated.ts`.
-  The code below imports the generated mutation and calls it in `handleSubmit`:
+  `SignInPage.query.graphql` and generated in `/src/graphql/generated.ts`. The
+  code below imports the generated mutation and calls it in `handleSubmit`:
 
 ```tsx
 import { useMutation } from '@apollo/client';
@@ -247,8 +248,8 @@ export const SignInPage = () => {
   match), the server should return the corresponding `user` object and a unique
   `accessToken`. Capture these values using a `useEffect`. Save the
   `accessToken` in localStorage for future use (hide the details in
-  `AuthService`). Save the `user` object in AuthState (yes, create a
-  `AuthContext` for this under src/contexts/AuthContext.tsx). See the code
+  `AuthService`). Save the `user` object in AuthState (yes, create an
+  `AuthContext` for this under `src/contexts/AuthContext.tsx`). See the code
   fragment below to get started with this:
 
 ```ts
@@ -303,6 +304,8 @@ graphql.mutation('SignIn', (req, res, ctx) => {
       signIn: {
         __typename: 'UserInfo',
         user: {
+          __typename: 'User',
+          id: '8c8726cb-7f8a-4ebd-b5ec-3ea5a2c144ab',
           name: 'John Smith',
           email: 'jsmith@example.com',
         },
@@ -313,9 +316,18 @@ graphql.mutation('SignIn', (req, res, ctx) => {
 });
 ```
 
+- Note that we are returning `__typename` fields in the response to indicate the
+  types of objects that are returned. These type names are used in by the Apollo
+  Client to properly cache the objects. The Apollo server injects type names
+  automatically, however, in the mock server we will have to do this manually.
+
 - Verify that you can now signin through the front-end using the hard-coded
   credentials. The returned access token should be stored in localStorage, and
   the app should redirect to the Accounts page.
+- Install the
+  [Apollo Client Devtools extension](https://chrome.google.com/webstore/detail/apollo-client-devtools/jdkknkkbebbapilgoeccciglkfbmbnfm)
+  in your Chrome browser. Inspect your Apollo Client cached data to see how the
+  UserInfo object is cached.
 
 Now that you have the basic signin flow working, implement the following
 requirements:
