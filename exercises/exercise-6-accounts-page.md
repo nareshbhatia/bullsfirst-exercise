@@ -18,9 +18,10 @@ In this exercise, we will
 9. Write an integration test using Cypress that starts from the Sign-in page and
    navigates to the Accounts page. For this test, do not repeat the
    authentication workflow in code. Create a Cypress command named
-   `signupJohnSmith` to signup and authenticate a user. See accelerated-news
-   example. The command is defined in `/cypress/support/commands`. This command
-   should be used in all tests that need to test an authenticated page.
+   `signupJohnSmith` to signup and authenticate the `John Smith` user. See
+   accelerated-news example. The command is defined in
+   `/cypress/support/commands`. This command should be used in all tests that
+   need to test an authenticated page.
 10. Attach a screenshot of your implementation to your pull request.
 
 ## Tips
@@ -61,63 +62,10 @@ component to create the 4 links on the Account page.
 Note that Apollo GraphQL provider was set up in exercise 3.
 
 For this exercise you need to query the server in
-src/features/Accounts/Accounts.tsx as shown below to fetch the accounts:
-
-```typescript jsx
-import { useQuery, gql } from '@apollo/client';
-import { Account } from '../../models';
-
-interface AccountsData {
-  accounts: Array<Account>;
-}
-
-const GET_ACCOUNTS = gql`
-  query GetAccounts {
-    accounts {
-      id
-      name
-    }
-  }
-`;
-
-export const Accounts = () => {
-  const { loading, error, data } = useQuery<AccountsData>(GET_ACCOUNTS);
-
-  if (loading) return <Loading />;
-  if (error) {
-    throw error;
-  }
-
-  return (
-    <ViewVerticalContainer>
-      <Header />
-      <HorizontalContainer className="bf-min-height-0">
-        {selectedNavId !== undefined ? (
-          <SideBar
-            title="Accounts"
-            items={data?.accounts}
-            selectedNavItemId={selectedNavId}
-            onNavItemSelected={handleNavItemSelected}
-          />
-        ) : (
-          <div className="p-3">No accounts found</div>
-        )}
-        <Outlet />
-      </HorizontalContainer>
-    </ViewVerticalContainer>
-  );
-};
-```
-
-The `Account` model referenced on line 2 above should be set up as follows in
-`/src/models/Account.ts`:
-
-```ts
-export interface Account {
-  id: string;
-  name: string;
-}
-```
+`src/features/Accounts/Accounts.tsx` to fetch the accounts. Copy the GraphQL
+query from `/code/src/pages/AccountsPage/AccountsPage.query.graphql` to your
+repo. Generate the code for the query by running `graphql:codegen`. Finally,
+execute the query from `Accounts.tsx` and supply the results to `<SideBar>`.
 
 ### Mock Service Worker
 
