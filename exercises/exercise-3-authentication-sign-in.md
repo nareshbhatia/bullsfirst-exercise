@@ -347,6 +347,13 @@ requirements:
 - If the user is on the home page, and the localStorage already has a saved
   access token, then the user should not have to sign in. Clicking on the signin
   button should take them straight to the accounts page.
+- For both the above features to work, the application should fetch the
+  `UserInfo` from the server on startup - provided that the access token is
+  saved in localStorage. For this, you will have to run the GetUser query on
+  application startup. Copy `/code/src/App.query.graphql` to your repo and run
+  the query from `App.tsx`. You will need to use the `skip` option in `useQuery`
+  to prevent the query from running if the access token is not present in
+  localStorage.
 
 Finally,
 

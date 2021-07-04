@@ -4,7 +4,7 @@ In this exercise, we will
 
 1. Create a skeleton of the Accounts page as show in the
    [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
-2. We will include the `SideBar` that was implemented in exercise 3.
+2. We will include the `SideBar` that was implemented in exercise 5.
 3. We will add an `AccountHeader` consisting of 4 links (Overview, Holdings
    Orders & Activity) and 3 buttons (Transfer, Trade and Refresh).
 4. We will add dummy content for Overview, Holdings, Orders & Activity tabs.
