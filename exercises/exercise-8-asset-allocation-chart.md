@@ -8,49 +8,24 @@ top level and then allows drilldown to the industry level. We will use
 - As part of the previous exercise, we already have a placeholder
   `AssetAllocationChart`.
 
-- Create the following models under `/src/models`. Note that `AssetAllocation`
-  is a recursive data structure so that we can define a tree of allocations at
-  the sector and industry level.
+- Copy the GraphQL query from
+  `/code/src/pages/AccountsPage/Overview/AssetAllocationChart.query.graphql` to
+  your repo. Note that this query passes in an `accountId` as the parameter and
+  receives `AssetAllocationFields` in return. Note that `AssetAllocation` is a
+  recursive data structure so that we can define a tree of allocations at the
+  sector and industry level. Here's the GraphQL type definition for it:
 
-```ts
-// ----- AssetAllocation.ts -----
-export interface AssetAllocation {
-  id: string;
-  name: string;
-  value: number;
-  percentage: number;
-  children?: Array<AssetAllocation>;
-}
-
-// ----- Holding.ts -----
-export interface Holding {
-  id: string;
-  symbol: string;
-  quantity: number;
-  accountId: string;
-}
-
-// ----- Industry.ts -----
-export interface Industry {
-  id: string;
-  name: string;
-  sectorId: string;
-}
-
-// ----- Sector.ts -----
-export interface Sector {
-  id: string;
-  name: string;
-}
-
-// ----- Security.ts -----
-export interface Security {
-  id: string;
-  name: string;
-  price: number;
-  industryId: string;
+```graphql
+type AssetAllocation {
+  categoryId: String!
+  categoryName: String!
+  value: Float!
+  percentage: Float!
+  children: [AssetAllocation!]
 }
 ```
+
+- Generate the code for the query by running `graphql:codegen`.
 
 - Use [this Highcharts example](https://www.highcharts.com/demo/pie-drilldown)
   to implement a reusable Pie chart component at
@@ -132,37 +107,12 @@ test('PieChart renders correctly', () => {
 ```
 
 - Now let's focus on implementing the `AssetAllocationChart` component using our
-  reusable `PieChart` component. Create a GraphQL query in the
-  AssetAllocationChart component to fetch asset allocations from the server.
-  Note that the query passes in an `accountId` as the parameter and receives a
-  nested list of sector and industry allocations in return.
-
-```ts
-interface AssetAllocationData {
-  assetAllocations: Array<AssetAllocation>;
-}
-
-export const GET_ASSET_ALLOCATIONS = gql`
-  query GetAssetAllocations($accountId: ID!) {
-    assetAllocations(id: $accountId) {
-      id
-      name
-      value
-      percentage
-      children {
-        id
-        name
-        value
-        percentage
-      }
-    }
-  }
-`;
-```
-
-Here's a sample of the data returned from the server. Note that this is just raw
-asset-allocation data, with no presentational information. The server should not
-make any assumptions about how this data is to be presented.
+  reusable `PieChart` component. Execute the `GetAssetAllocations` query in the
+  AssetAllocationChart component. Note that the query passes in an `accountId`
+  as the parameter and receives a nested list of sector and industry allocations
+  in return. Here's a sample of the returned data. Note that this is just raw
+  asset-allocation data, with no presentational information. The server should
+  not make any assumptions about how this data is to be presented.
 
 ```json
 {
