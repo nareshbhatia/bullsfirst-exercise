@@ -62,7 +62,7 @@ export const RefreshButton = () => {
 export const NetWorth = () => {
   const { accountId } = useParams();
   const { refreshCount } = useRefreshContext();
-  const { loading, data, refetch } = useQuery<NetWorthData>(GET_NET_WORTH, {
+  const { loading, error, data, refetch } = useQuery(GetNetWorthDocument, {
     variables: {
       accountId,
     },
