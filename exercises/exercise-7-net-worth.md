@@ -17,7 +17,11 @@ In this exercise, we will create the Net Worth component on the Overview tab.
   example, given the URL `/accounts/brokerage-account/overview`, it should pick
   out `brokerage-account` as the accountId. For this, you will need to use
   react-router's `useParams()` hook.
-- Finally, execute the NetWorth query and render the component.
+
+- Finally, execute the NetWorth query and render the component. Make sure that
+  all numbers are formatted with two decimal places and comma separators. Use
+  the library `@react-force/number-utils` for this (use
+  `NumberUtils.formatAsMoney()`).
 
 - On the mock server, create a MSW handler to return the net worth for a given
   account. Use the sample data under `/src/mocks/data` to compute the net worth.

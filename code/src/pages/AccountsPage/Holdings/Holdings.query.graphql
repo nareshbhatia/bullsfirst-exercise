@@ -1,0 +1,5 @@
+query GetHoldings($accountId: ID!) {
+  holdings(accountId: $accountId) {
+    ...HoldingFields
+  }
+}

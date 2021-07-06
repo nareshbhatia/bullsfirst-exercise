@@ -40,7 +40,8 @@ According to
 7. [Net Worth](exercises/exercise-7-net-worth.md)
 8. [Asset Allocation Chart](exercises/exercise-8-asset-allocation-chart.md)
 9. [Performance Chart](exercises/exercise-9-performance-chart.md)
-9. [Refresh Button](exercises/exercise-10-refresh-button.md)
+10. [Refresh Button](exercises/exercise-10-refresh-button.md)
+11. [Holdings](exercises/exercise-11-holdings.md)
 
 ## Learning Resources
 

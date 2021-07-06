@@ -50,6 +50,14 @@ Key concepts to understand:
 3. [Examples](https://www.highcharts.com/demo)
 4. [Pie chart with drilldown](https://www.highcharts.com/demo/pie-drilldown)
 
+## ag-Grid
+
+ag-Grid supports multiple frameworks. We use the React version of ag-Grid
+along with some concepts (like `columnDefs`) from the JavaScript version.
+
+1. [JavaScript Grid Documentation](https://www.ag-grid.com/javascript-grid/)
+2. [React Grid Documentation](https://www.ag-grid.com/react-grid/)
+
 ## React Testing Library
 
 1. [Introduction](https://testing-library.com/docs/)
