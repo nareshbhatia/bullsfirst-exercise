@@ -52,8 +52,8 @@ Key concepts to understand:
 
 ## ag-Grid
 
-ag-Grid supports multiple frameworks. We use the React version of ag-Grid
-along with some concepts (like `columnDefs`) from the JavaScript version.
+ag-Grid supports multiple frameworks. We use the React version of ag-Grid along
+with some concepts (like `columnDefs`) from the JavaScript version.
 
 1. [JavaScript Grid Documentation](https://www.ag-grid.com/javascript-grid/)
 2. [React Grid Documentation](https://www.ag-grid.com/react-grid/)
@@ -76,6 +76,16 @@ along with some concepts (like `columnDefs`) from the JavaScript version.
 ## Cypress
 
 1. [Documentation](https://docs.cypress.io/guides/overview/why-cypress)
+
+### Git and Code Reviews
+
+1. [How to Make Your Code Reviewer Fall in Love with You](https://mtlynch.io/code-review-love/) -
+   Must read! Shows how to raise good PRs.
+2. [git - the simple guide](https://rogerdudler.github.io/git-guide/)
+3. [Trunk Based Development](https://trunkbaseddevelopment.com/)
+4. [Trunk-based Development vs. Git Flow](https://www.toptal.com/software/trunk-based-development-git-flow)
+5. [OneFlow – a Git branching model and workflow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow) -
+   OneFlow is just another name for Trunk-based Development.
 
 ## Visual Design
 
