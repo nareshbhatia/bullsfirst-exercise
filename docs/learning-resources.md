@@ -42,6 +42,7 @@ Key concepts to understand:
 ## GraphQL
 
 1. [GraphQL concepts I wish someone explained to me a year ago](https://medium.com/naresh-bhatia/graphql-concepts-i-wish-someone-explained-to-me-a-year-ago-514d5b3c0eab)
+2. [Apollo GraphQL Tutorial](https://odyssey.apollographql.com/)
 
 ## Highcharts
 
