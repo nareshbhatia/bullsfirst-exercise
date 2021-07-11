@@ -21,6 +21,9 @@ padding. So the effective max-width for content on desktops is 800 - (2 * 24) =
   [Chota](https://jenil.github.io/chota/) to get you started. See
   [Accelerated News](https://github.com/PublicisSapient/accelerated-news) for an
   example.
+- If you decide to use Chota, then remove all the CSS in `/styles/main.css` that
+  is generated ny the template, because it interferes with Chota. Instead, use
+  the `main.css` from accelerated-news as your starting point.
 - Use [BEM](https://en.bem.info/) to properly namespace your styles.
 - Set the route for this page to `/`.
 - When the "Sign In" button is clicked, navigate to a blank page with the route
