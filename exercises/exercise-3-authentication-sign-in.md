@@ -101,13 +101,13 @@ in server calls to get account data and perform actions.
 - Start by adding the following modules to Bullsfirst client:
 
 ```sh
-npm install graphql @apollo/client react-icons uuid
-npm install --save-dev @types/uuid @graphql-codegen/cli @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations
+npm install graphql @apollo/client apollo-link-scalars graphql-scalars uuid react-icons
+npm install --save-dev @types/uuid @graphql-codegen/cli @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/introspection
 
 # or
 
-yarn add graphql @apollo/client react-icons uuid
-yarn add -D @types/uuid @graphql-codegen/cli @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations
+yarn add graphql @apollo/client apollo-link-scalars graphql-scalars uuid react-icons
+yarn add -D @types/uuid @graphql-codegen/cli @graphql-codegen/typed-document-node @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/introspection
 ```
 
 - Add the following script to the `scripts` section in package.json:
@@ -138,11 +138,16 @@ export interface User {
     This is the GraphQL mutation for signing in. Note that this mutation uses a
     GraphQL _fragment_ called `UserInfoFields` as the return value from the
     mutation. We will copy the definition of this fragment in the next step.
-  - Copy `/code/src/graphql/fragments.graphql` to your repo. This file defines
-    the `UserInfoFields` fragment and several other fragments that will be used
-    in subsequent exercises.
+  - Copy all files under `/code/src/graphql` to your repo. The important file
+    here is `fragments.graphql` which defines the `UserInfoFields` fragment and
+    several other fragments that will be used in subsequent exercises.
+  - Copy `/code/src/utils/GraphQlUtils.ts` to your repo. This file contains the
+    initialization for the Apollo Client.
+  - Copy `/code/src/test/test-utils.tsx` to your repo. This file initializes the
+    Apollo Client for tests.
   - Copy `/code/codegen.yml` to the root folder in your repo. This file
     specifies the code-generation configuration.
+  - Add `src/graphql/schema.json` to `.prettierignore`.
 
 - Now generate TypeScript code based on the files added above.
 
@@ -165,48 +170,22 @@ yarn graphql:codegen
   file.
 
 - Now let's set up the Apollo Client library to make server calls. Start by
-  adding an `ApolloProvider` in index.tsx. See below. Note that `authlink` is
-  configured to send an `authorization` header in any request if localStorage
-  has a previously saved access token. You can find further details
-  [here](https://www.apollographql.com/docs/react/networking/authentication/#header).
+  adding an `ApolloProvider` in index.tsx. See below.
 
 ```tsx
-// Create Apollo client
-const env = new WindowEnv();
-const httpLink = createHttpLink({
-  uri: env.get(EnvVar.API_URL),
-});
-const authLink = setContext((_, { headers }) => {
-  const token = AuthService.getAccessToken();
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-  defaultOptions: {
-    watchQuery: {
-      // Executes queries against both the cache and the GraphQL server.
-      // The query automatically updates if the result of the server-side
-      // query modifies the cached fields.
-      fetchPolicy: 'cache-and-network',
-    },
-    query: {
-      fetchPolicy: 'network-only',
-    },
-  },
-});
+import { ApolloProvider } from '@apollo/client';
+import { AuthContextProvider, EnvProvider } from './contexts';
+import { GraphQlUtils } from './utils';
+
+// Create Apollo Client
+const apolloClient = GraphQlUtils.createApolloClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
       <ErrorBoundary>
         <EnvProvider>
-          <ApolloProvider client={client}>
+          <ApolloProvider client={apolloClient}>
             <AuthContextProvider>
               <Router>
                 <App />
@@ -221,6 +200,11 @@ ReactDOM.render(
 );
 ```
 
+- Review `/src/utils/GraphQlUtils.ts`. Note that `authlink` is configured to
+  send an `authorization` header in any request if localStorage has a previously
+  saved access token. You can find further details
+  [here](https://www.apollographql.com/docs/react/networking/authentication/#header).
+
 - Currently, the `handleSubmit()` method of the SignIn page redirects directly
   to the Accounts page without doing any authentication. Let's change that.
   `handleSubmit()` should now make a server call to sign in and get an access
@@ -230,7 +214,7 @@ ReactDOM.render(
 
 ```tsx
 import { useMutation } from '@apollo/client';
-import { Credentials, SignInDocument } from '../../graphql/generated';
+import { Credentials, SignInDocument } from '../../graphql';
 
 export const SignInPage = () => {
   ...

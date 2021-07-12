@@ -1,3 +1,5 @@
+scalar DateTime
+
 enum Side {
   BUY
   SELL
@@ -11,6 +13,13 @@ enum Direction {
 enum OrderType {
   MARKET
   LIMIT
+}
+
+enum OrderStatus {
+  NEW
+  PLACED
+  EXECUTED
+  CANCELED
 }
 
 enum TransactionType {
@@ -91,8 +100,11 @@ type Order {
   security: Security!
   quantity: Int!
   type: OrderType!
-  limitPrice: Float!
+  limitPrice: Float
+  status: OrderStatus!
   account: Account!
+  createdAt: DateTime!
+  createdBy: ID!
 }
 
 interface Transaction {
@@ -129,6 +141,9 @@ type Query {
 
   "returns the holdings for the specified account"
   holdings(accountId: ID!): [Holding!]!
+
+  "returns the orders for the specified account"
+  orders(accountId: ID!): [Order!]!
 }
 
 type Mutation {

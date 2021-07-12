@@ -11,3 +11,8 @@ generates:
     hooks:
       afterOneFileWrite:
         - prettier --write
+  src/graphql/schema.json:
+    plugins:
+      - "introspection"
+    config:
+      minify: true
