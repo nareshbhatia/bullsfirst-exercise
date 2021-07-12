@@ -110,11 +110,15 @@ type Order {
 interface Transaction {
   id: ID!
   account: Account!
+  createdAt: DateTime!
+  createdBy: ID!
 }
 
 type CashTransfer implements Transaction {
   id: ID!
   account: Account!
+  createdAt: DateTime!
+  createdBy: ID!
   direction: Direction!
   amount: Float!
 }
@@ -122,6 +126,8 @@ type CashTransfer implements Transaction {
 type Trade implements Transaction {
   id: ID!
   account: Account!
+  createdAt: DateTime!
+  createdBy: ID!
   side: Side!
   security: Security!
   quantity: Int!
