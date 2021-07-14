@@ -43,6 +43,7 @@ According to
 10. [Refresh Button](exercises/exercise-10-refresh-button.md)
 11. [Holdings](exercises/exercise-11-holdings.md)
 12. [Orders](exercises/exercise-12-orders.md)
+13. [Activity](exercises/exercise-13-activity.md)
 
 ## Learning Resources
 

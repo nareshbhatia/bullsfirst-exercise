@@ -1,4 +1,4 @@
-import { OrderStatus, OrderType, Side } from './generated';
+import { OrderStatus, OrderType, Side, TransactionType } from './generated';
 
 export const OrderStatusLookup: { [key in OrderStatus]: string } = {
   NEW: 'New',
@@ -15,4 +15,9 @@ export const OrderTypeLookup: { [key in OrderType]: string } = {
 export const SideLookup: { [key in Side]: string } = {
   BUY: 'Buy',
   SELL: 'Sell',
+};
+
+export const TransactionTypeLookup: { [key in TransactionType]: string } = {
+  CASH_TRANSFER: 'Transfer',
+  TRADE: 'Trade',
 };
