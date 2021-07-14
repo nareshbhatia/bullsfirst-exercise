@@ -32,6 +32,8 @@ padding. So the effective max-width for content on desktops is 800 - (2 * 24) =
   logical components, e.g. Hero, Content and Footer. Create a Storybook story
   for the Hero component to make sure it behaves as expected. When satisfied,
   wire it into the Home page.
+- The two images for this exercise are provided in this bullsfirst-docs repo.
+  Copy them from `/code/src/assets` to your repo under `/src/assets`.
 - Create simple unit tests to make sure that the components are rendering
   correctly.
 - Start a new integration test named `authentication.spec.js`. We will expand
@@ -68,10 +70,6 @@ bug. Never work directly on main.
 
 Once you have a sufficient implementation of this exercise, create a pull
 request so that others can start reviewing your code and providing comments.
-
-## Resources
-
-- The two images for this exercise can be found in the assets folder.
 
 ## References
 
