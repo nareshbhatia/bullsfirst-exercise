@@ -26,6 +26,11 @@ padding. So the effective max-width for content on desktops is 800 - (2 * 24) =
   the `main.css` from accelerated-news as your starting point.
 - Use [BEM](https://en.bem.info/) to properly namespace your styles.
 - Set the route for this page to `/`.
+- The visual design specifies `Inter` as the font for all the typography. Make
+  sure you load this font and set it as the default on the `<body>` tag. Chota
+  does this automatically, you just need to override the `font-family-sans` CSS
+  variable. See how this is done in accelerated-news (`index.html` &
+  `main.css`).
 - When the "Sign In" button is clicked, navigate to a blank page with the route
   set to `/signin`.
 - Don't build the Home page as a monolithic component. Break it up into smaller
