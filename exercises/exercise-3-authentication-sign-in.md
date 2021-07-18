@@ -218,36 +218,25 @@ import { Credentials, SignInDocument } from '../../graphql';
 
 export const SignInPage = () => {
   ...
-  const [signIn, { data, error }] = useMutation(SignInDocument);
-  const signInError = error ? error.message : undefined;
+  const [signIn, { error }] = useMutation(SignInDocument);
 
   const handleSubmit = async (credentials: Credentials) => {
-    await signIn({ variables: { credentials } });
+    try {
+      const result = await signIn({ variables: { credentials } });
+      if (result.data) {
+        const { user, accessToken } = result.data.signIn;
+        AuthService.setAccessToken(accessToken);
+        setAuthState({ ...authState, user });
+      }
+    } catch (e) {
+      // eat error because it is already captured in useMutation result
+    }
   };
   ...
 };
 ```
 
-- If the `signIn` call to the server is successful (i.e. email and password
-  match), the server should return the corresponding `user` object and a unique
-  `accessToken`. Capture these values using a `useEffect`. Save the
-  `accessToken` in localStorage for future use (hide the details in
-  `AuthService`). Save the `user` object in AuthState (yes, create an
-  `AuthContext` for this under `src/contexts/AuthContext.tsx`). See the code
-  fragment below to get started with this:
-
-```ts
-// set authState if user has signed in successfully
-useEffect(() => {
-  if (data?.signIn) {
-    const { user, accessToken } = data.signIn;
-    AuthService.setAccessToken(accessToken);
-    setAuthState({ ...authState, user });
-  }
-}, [data?.signIn, authState, setAuthState]);
-```
-
-- Finally, add one more `useEffect` to the SignIn component to monitor
+- Finally, add a `useEffect` to the SignIn component to monitor
   `authState` and if a user is present, redirect to `/accounts`. See below:
 
 ```ts
