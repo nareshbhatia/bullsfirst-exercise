@@ -59,6 +59,12 @@ input Credentials {
   password: String!
 }
 
+input TransferCashInput {
+  accountId: ID!
+  direction: Direction!
+  amount: Float!
+}
+
 type Security {
   id: ID!
   name: String!
@@ -161,4 +167,7 @@ type Mutation {
 
   "invalidates the access token that was used to sign in and returns it"
   signOut: String!
+
+  "transfers cash in or out of an account"
+  transferCash(transferCashInput: TransferCashInput!): CashTransfer!
 }
