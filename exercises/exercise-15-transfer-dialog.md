@@ -14,14 +14,14 @@ header. It shows the following elements:
 3. Direction toggle: Allows to toggle the transfer direction between In & Out
 4. Amount field: For entering transfer amount - up to 2 decimal places. As the
    user types digits, commas are added as thousands separators.
-5. Action buttons: Dismiss & Submit
+5. Action buttons: Discard & Submit
 
 We will implement the message dialog in 3 steps:
 
 1. Refactor `AccountsPage` to make the selected account's name available to all
    components on the page. This is needed for showing the account name in the
    `TransferDialog`.
-2. Implement a reusable `NumberField`.
+2. Implement a reusable `NumberField` to enter the transfer amount.
 3. Implement the `TransferDialog` itself.
 
 ## Exercise Instructions - AccountsPage Refactoring
