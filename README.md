@@ -44,6 +44,7 @@ According to
 11. [Holdings](exercises/exercise-11-holdings.md)
 12. [Orders](exercises/exercise-12-orders.md)
 13. [Activity](exercises/exercise-13-activity.md)
+14. [Message Dialog](exercises/exercise-14-message-dialog.md)
 
 ## Learning Resources
 
