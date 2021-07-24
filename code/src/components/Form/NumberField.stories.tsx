@@ -69,10 +69,13 @@ const Template: Story = () => {
   return (
     <div style={{ width: 320 }}>
       <TestForm onSubmit={setHolding} />
-      <div className="mt-5">
-        <h4>Form value</h4>
-        <p>quantity: {holding?.quantity}</p>
-        <p>price: {holding?.price}</p>
+      <div className="mt-2">
+        <h4 className="m-0">Form value</h4>
+        <p>
+          quantity: {holding?.quantity}
+          <br />
+          price: {holding?.price}
+        </p>
       </div>
     </div>
   );

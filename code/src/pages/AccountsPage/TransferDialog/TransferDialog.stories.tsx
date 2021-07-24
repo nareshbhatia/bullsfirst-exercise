@@ -55,7 +55,7 @@ const TestContainer = () => {
 };
 
 export default {
-  title: 'Pages/Accounts',
+  title: 'Pages/Accounts/TransferDialog',
   component: TransferDialog,
 } as Meta;
 

@@ -65,6 +65,15 @@ input TransferCashInput {
   amount: Float!
 }
 
+input OrderInput {
+  accountId: ID!
+  side: Side!
+  symbol: ID!
+  quantity: Int!
+  type: OrderType!
+  limitPrice: Float
+}
+
 type Security {
   id: ID!
   name: String!
@@ -170,4 +179,7 @@ type Mutation {
 
   "transfers cash in or out of an account"
   transferCash(transferCashInput: TransferCashInput!): CashTransfer!
+
+  "place a buy or sell order for a security"
+  placeOrder(orderInput: OrderInput!): Order!
 }

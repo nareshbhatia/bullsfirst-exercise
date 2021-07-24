@@ -169,8 +169,16 @@ showing a button labeled _Transfer_. When this button is clicked, the
 
 ```tsx
 // ---------- TransferContext ----------
+// everything that TransferDialog allows to enter is kept as optional
+export type TransferDefaults = {
+  accountId: string;
+  direction?: Direction;
+  amount?: number;
+};
+
 type TransferState = {
   showDialog: boolean;
+  transferDefaults?: TransferDefaults;
 };
 type TransferStateSetter = (transferState: TransferState) => void;
 
@@ -203,9 +211,10 @@ const TransferContext = React.createContext<
 
 ```tsx
 import { Direction, TransferCashInput } from '../../../graphql';
+import { TransferDefaults, useTransferContext } from './TransferContext';
 
 export interface TransferFormProps {
-  defaultValues: Omit<TransferCashInput, 'amount'>;
+  transferDefaults: TransferDefaults;
   onSubmit: (transferCashInput: TransferCashInput) => void;
 }
 ```

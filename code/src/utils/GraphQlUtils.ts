@@ -47,7 +47,19 @@ const createApolloClient = () => {
   // Return the ApolloClient
   return new ApolloClient({
     link,
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            // incoming should override existing
+            accounts: { merge: false },
+            holdings: { merge: false },
+            orders: { merge: false },
+            transactions: { merge: false },
+          },
+        },
+      },
+    }),
     defaultOptions: {
       watchQuery: {
         // Executes queries against both the cache and the GraphQL server.
