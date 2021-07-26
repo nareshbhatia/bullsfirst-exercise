@@ -9,7 +9,7 @@ and repeated below for quick reference.
 The transfer dialog is opened by clicking the _Transfer_ button in the account
 header. It shows the following elements:
 
-1. Title: XFER IN or XFER OUT
+1. Title: TRANSFER IN or TRANSFER OUT
 2. Subtitle: The account in which the transfer is requested
 3. Direction toggle: Allows to toggle the transfer direction between In & Out
 4. Amount field: For entering transfer amount - up to 2 decimal places. As the
