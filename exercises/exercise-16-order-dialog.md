@@ -397,7 +397,7 @@ const handleTradeClicked = () => {
   Cypress:
 
 ```js
-describe('Cash Transfer', function () {
+describe('Order Dialog', function () {
   it('allows user to place a buy order at market price', function () {
     ...
   });
@@ -407,15 +407,15 @@ describe('Cash Transfer', function () {
   });
 
   it('allows user to place a sell order at limit price', function () {
-  ...
+    ...
   });
 
   it('shows an error if there are not sufficient funds for a buy market order', function () {
-  ...
+    ...
   });
 
   it('shows an error if there is not sufficient quantity for a sell market order', function () {
-  ...
+    ...
   });
 
   ...
