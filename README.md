@@ -46,6 +46,7 @@ According to
 13. [Activity](exercises/exercise-13-activity.md)
 14. [Message Dialog](exercises/exercise-14-message-dialog.md)
 15. [Transfer Dialog](exercises/exercise-15-transfer-dialog.md)
+16. [Order Dialog](exercises/exercise-16-order-dialog.md)
 
 ## Learning Resources
 

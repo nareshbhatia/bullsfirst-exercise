@@ -151,6 +151,9 @@ type Query {
   "returns the user identified by the access token in the request header"
   user: User!
 
+  "returns all securities whose id or name matches the query string"
+  securities(query: String!): [Security!]!
+
   "returns the accounts owned by the requesting user"
   accounts: [Account!]!
 
