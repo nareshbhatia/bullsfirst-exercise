@@ -41,7 +41,6 @@ const createApolloClient = () => {
   });
 
   // create the link chain
-  // @ts-ignore
   const link = ApolloLink.from([authLink, scalarsLink, httpLink]);
 
   // Return the ApolloClient
