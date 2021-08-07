@@ -187,7 +187,33 @@ export function computePieDrilldown(sectorAllocations: Array<AssetAllocation>) {
 - Implement rest of the `AssetAllocationChart` component.
 
 - Create a MSW handler to return the asset allocations for a given account. Use
-  the sample data under `/src/mocks/data` to compute the asset allocations.
+  the sample data under `/src/mocks/data` to compute the asset allocations. This
+  is not trivial. Expect to write approximately 70-90 lines of business logic.
+  Here's the high-level algorithm:
+
+```ts
+// iterate through holdings and start creating asset allocations
+const sectorAllocations: Array<AssetAllocation> = [];
+accountHoldings.forEach((holding) => {
+  // get security, industry and sector
+  // create or update sector allocation (just the value)
+  // create or update industry allocation as child of sector allocation (just the value)
+});
+
+// calculate total account value as the sum of all sector values
+
+// calculate sector allocation percentages
+sectorAllocations.forEach((sectorAllocation) => {
+  sectorAllocation.percentage = sectorAllocation.value / accountValue;
+
+  // calculate industry allocation percentages
+  const { children: industryAllocations } = sectorAllocation;
+  industryAllocations!.forEach((industryAllocation) => {
+    industryAllocation.percentage =
+      industryAllocation.value / sectorAllocation.value;
+  });
+});
+```
 
 - Create a unit test to make sure that the AssetAllocationChart component
   renders correctly. Be sure to mock the `useParams()` hook as done in the
