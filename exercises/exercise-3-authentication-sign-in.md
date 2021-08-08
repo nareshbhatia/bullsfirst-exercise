@@ -236,8 +236,8 @@ export const SignInPage = () => {
 };
 ```
 
-- Finally, add a `useEffect` to the SignIn component to monitor
-  `authState` and if a user is present, redirect to `/accounts`. See below:
+- Finally, add a `useEffect` to the SignIn component to monitor `authState` and
+  if a user is present, redirect to `/accounts`. See below:
 
 ```ts
 // redirect if user is already logged in
@@ -309,7 +309,11 @@ requirements:
   button.
 - When the user clicks on the sign-out button, the client should send a sign-out
   request to the server and wipe out its access token from localStorage. Let the
-  server return the user's access token in response to the sign out request.
+  server return the user's access token in response to the sign out request. For
+  this exercise the server does not remember the access tokens issued to
+  clients. So simply return the access token sent by the client. In the next
+  exercise, we will start saving the access tokens on the server side, and
+  validating against them.
 - If the user tries to access a secure page such as '/accounts' directly, and
   they are not signed in to Bullsfirst, they should be redirected to the signin
   page. After a successful sign in, they should be directed back to the accounts
