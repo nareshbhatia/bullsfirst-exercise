@@ -30,8 +30,8 @@ Key concepts to understand:
 
 ## React Router
 
-1. [Version 5 docs](https://github.com/ReactTraining/react-router/tree/dev/docs) -
-   Note that v5 is in beta. The only up-to-date docs are here in the dev branch.
+1. [Version 6 docs](https://github.com/remix-run/react-router/tree/dev/docs) -
+   Note that v6 is in beta. The only up-to-date docs are here in the dev branch.
 
 ## React Hook Form
 
