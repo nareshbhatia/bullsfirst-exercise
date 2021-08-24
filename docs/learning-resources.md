@@ -42,7 +42,14 @@ Key concepts to understand:
 ## GraphQL
 
 1. [GraphQL concepts I wish someone explained to me a year ago](https://medium.com/naresh-bhatia/graphql-concepts-i-wish-someone-explained-to-me-a-year-ago-514d5b3c0eab)
-2. [Apollo GraphQL Tutorial](https://odyssey.apollographql.com/)
+2. [Introduction to GraphQL](https://graphql.org/learn/)
+3. [Apollo GraphQL Tutorial](https://odyssey.apollographql.com/)
+4. [Apollo Documentation](https://www.apollographql.com/docs/)
+5. [GraphQL Schema Design](https://blog.apollographql.com/graphql-schema-design-building-evolvable-schemas-1501f3c59ed5)
+6. [GraphQL Code Generator](https://www.graphql-code-generator.com/)
+7. [GraphQL Scalars](https://www.graphql-scalars.dev/docs/introduction/)
+8. [Apollo Link Scalars](https://github.com/eturino/apollo-link-scalars)
+9. [AWS AppSync](https://aws.amazon.com/appsync/)
 
 ## Highcharts
 
