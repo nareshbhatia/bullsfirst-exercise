@@ -4,7 +4,13 @@ This exercise implements user signup workflow. It also introduces persistence of
 users and access tokens on the mock server. Please see exercise 3 for the basics
 of the authentication workflow.
 
-## General Guidelines
+> Note: [accelerated-news](https://github.com/PublicisSapient/accelerated-news)
+> implements the same authentication flow as described in Exercise 3, including
+> the persistence of mock users and access tokens. The only difference is that
+> accelerated-news uses REST instead of GraphQL. When in doubt, look at the
+> accelerated-news implementation and replicate it.
+
+## Implementing the sign-up functionality
 
 - Implement the sign-up page as shown in the
   [visual design](https://www.figma.com/file/UdOTt1Z2fTnm0Cbi0FA1We/Bullsfirst).
@@ -46,10 +52,3 @@ of the authentication workflow.
   behavior.
   - mobile (460 x 800)
   - desktop (1024 x 800)
-
-# References
-
-The same authentication flow described in this exercise has been implemented in
-[accelerated-news](https://github.com/PublicisSapient/accelerated-news). The
-only difference is that accelerated-news uses REST instead of GraphQL, but the
-basic concepts still apply.

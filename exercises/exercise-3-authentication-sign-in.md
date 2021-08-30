@@ -98,6 +98,11 @@ in server calls to get account data and perform actions.
 
 ## Implementing authentication
 
+> Note: [accelerated-news](https://github.com/PublicisSapient/accelerated-news)
+> implements the same authentication flow as described above. The only
+> difference is that accelerated-news uses REST instead of GraphQL. When in
+> doubt, look at the accelerated-news implementation and replicate it.
+
 - Start by adding the following modules to Bullsfirst client:
 
 ```sh
@@ -339,11 +344,6 @@ Finally,
   is working correctly.
 
 ## References
-
-The same authentication flow described in this exercise has been implemented in
-[accelerated-news](https://github.com/PublicisSapient/accelerated-news). The
-only difference is that accelerated-news uses REST instead of GraphQL, but the
-basic concepts still apply.
 
 For more information on GraphQL queries and mutations, you can refer to the
 following docs:
