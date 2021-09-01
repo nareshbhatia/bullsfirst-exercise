@@ -61,16 +61,17 @@ type Holding {
 - Generate the code for the query by running `graphql:codegen`.
 
 - Add the following modules to Bullsfirst client to get started with ag-Grid.
-  Note that we are adding node-sass for styling ag-Grid (that's the easier way
-  to style it).
+  Note that we are using ag-Grid version 25 because version 26 has introduced
+  some breaking changes. Also note that we are adding node-sass for styling
+  ag-Grid (that's the easier way to style it).
 
 ```sh
-npm install ag-grid-community ag-grid-react
+npm install ag-grid-community@25.3.0 ag-grid-react@25.3.0
 npm install --save-dev node-sass@4.14.1
 
 # or
 
-yarn add ag-grid-community ag-grid-react
+yarn add ag-grid-community@25.3.0 ag-grid-react@25.3.0
 yarn add -D node-sass@4.14.1
 ```
 
