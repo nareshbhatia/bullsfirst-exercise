@@ -21,6 +21,10 @@ padding. So the effective max-width for content on desktops is 800 - (2 * 24) =
   [Chota](https://jenil.github.io/chota/) to get you started. See
   [Accelerated News](https://github.com/PublicisSapient/accelerated-news) for an
   example.
+- Note that the Inter font and Chota should be loaded in `/public/index.html`.
+  Also, Storybook should load them for your stories to work correctly. This is
+  done in `.storybook/preview-head.html`. Look at Accelerated News to see how
+  this is done.
 - If you decide to use Chota, then remove all the CSS in `/styles/main.css` that
   is generated ny the template, because it interferes with Chota. Instead, use
   the `main.css` from accelerated-news as your starting point.
