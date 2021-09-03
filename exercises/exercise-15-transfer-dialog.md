@@ -201,7 +201,7 @@ const TransferContext = React.createContext<
   modal
   nested
 >
-  <TransferForm defaultValues={defaultValues} onSubmit={handleSubmit} />
+  <TransferForm onSubmit={handleSubmit} />
 </Popup>
 ```
 
@@ -211,10 +211,9 @@ const TransferContext = React.createContext<
 
 ```tsx
 import { Direction, TransferCashInput } from '../../../graphql';
-import { TransferDefaults, useTransferContext } from './TransferContext';
+import { useTransferContext } from './TransferContext';
 
 export interface TransferFormProps {
-  transferDefaults: TransferDefaults;
   onSubmit: (transferCashInput: TransferCashInput) => void;
 }
 ```

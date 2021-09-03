@@ -253,7 +253,7 @@ const OrderContext = React.createContext<
   modal
   nested
 >
-  <OrderForm orderDefaults={defaultValues} onSubmit={handleSubmit} />
+  <OrderForm onSubmit={handleSubmit} />
 </Popup>
 ```
 
@@ -263,7 +263,7 @@ const OrderContext = React.createContext<
 
 ```tsx
 import { GetSecuritiesDocument, OrderType, Side } from '../../../graphql';
-import { OrderDefaults, useOrderContext } from './OrderContext';
+import { useOrderContext } from './OrderContext';
 
 type Security = { id: string; name: string };
 
@@ -277,7 +277,6 @@ export type Order = {
 };
 
 export interface OrderFormProps {
-  orderDefaults: OrderDefaults;
   onSubmit: (order: Order) => void;
 }
 ```
