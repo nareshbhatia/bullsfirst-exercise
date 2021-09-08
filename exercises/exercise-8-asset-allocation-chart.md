@@ -88,6 +88,17 @@ const drilldown = {
 
 - Write a Storybook story to make sure that the pie chart works as expected.
 
+- Make sure that the pie colors match the visual design in Figma. Use the
+  following code in `index.tsx` and `.storybook/preview.tsx` to configure
+  Highcharts colors.
+
+```ts
+// Initialize Highcharts
+Highcharts.setOptions({
+  colors: ChartColors,
+});
+```
+
 - Write a simple test to make sure that the pie chart renders correctly. At a
   minimum, check to see if the expected number of pies are being rendered. See
   below:
