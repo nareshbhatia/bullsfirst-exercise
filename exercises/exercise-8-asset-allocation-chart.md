@@ -27,9 +27,19 @@ type AssetAllocation {
 
 - Generate the code for the query by running `graphql:codegen`.
 
-- Use [this Highcharts example](https://www.highcharts.com/demo/pie-drilldown)
-  to implement a reusable Pie chart component at
-  `src/components/Charts/PieChart.tsx`. This component should allow a two level
+- Review
+  [this Highcharts example](https://www.highcharts.com/demo/pie-drilldown) to
+  understand how to implement a drilldown pie-chart. Note that this example uses
+  the basic JavaScript API of Highcharts. You should instead use the Highcharts
+  React wrapper as documented
+  [here](https://github.com/highcharts/highcharts-react). Review the following
+  examples to see how the React wrapper is used:
+
+  - [Highcharts Demo](https://github.com/nareshbhatia/highcharts-demo)
+  - [Charts Demo](https://github.com/nareshbhatia/charts-demo)
+
+- Implement a reusable Pie chart component at
+  `src/components/Charts/PieChart.tsx`. The component should allow a two level
   drilldown. It should take in the following props:
 
 ```ts
