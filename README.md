@@ -50,4 +50,4 @@ According to
 
 ## Learning Resources
 
-See [here](docs/learning-resources.md)
+See [here](https://github.com/nareshbhatia/react-learning-resources)
