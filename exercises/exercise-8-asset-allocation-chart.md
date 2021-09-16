@@ -191,7 +191,8 @@ test('PieChart renders correctly', () => {
   `series` and a `drilldown`. Write two top-level functions (outside the React
   component) in the AssetAllocationChart.tsx file to do this. We are
   intentionally not embedding this logic into the component so that it is easier
-  to test.
+  to test. Make sure that the pie series and the drilldown are sorted in
+  descending order so that the pie slices are sequenced from large to small.
 
 ```ts
 export function computePieSeries(sectorAllocations: Array<AssetAllocation>) {
