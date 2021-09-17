@@ -37,11 +37,15 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/accounts" element={<Accounts />}>
+      <PrivateRoute
+        path="/accounts"
+        redirectPath="/signin"
+        element={<AccountsPage />}
+      >
         <Route path=":accountId" element={<AccountView />}>
           <Route path="overview" element={<Overview />} />
         </Route>
-      </Route>
+      </PrivateRoute>
       <Route path="/signin" element={<SignIn />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="*" element={<NotFound />} />
