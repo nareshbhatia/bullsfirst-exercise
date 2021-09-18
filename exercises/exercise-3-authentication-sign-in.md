@@ -311,7 +311,12 @@ Now that you have the basic signin flow working, implement the following
 requirements:
 
 - The Accounts page should show the name of the signed-in user, and a sign-out
-  button.
+  button. Use the following icon for the sign-out button:
+
+```ts
+import { FaSignOutAlt } from 'react-icons/fa';
+```
+
 - When the user clicks on the sign-out button, the client should send a sign-out
   request to the server and wipe out its access token from localStorage. Let the
   server return the user's access token in response to the sign out request. For

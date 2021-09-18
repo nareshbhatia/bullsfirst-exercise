@@ -282,8 +282,20 @@ export interface OrderFormProps {
 ```
 
 - Use `AutocompleteField`, `NumberField` and `ToggleButtonGroup` in your
-  implementation. Create a separate component called `SideToggle` to implement
-  the buy/sell toggle. Create it in the same directory as `OrderForm`.
+  implementation.
+
+- Create a separate component called `SideToggle` to implement the buy/sell
+  toggle. Create it in the same directory as `OrderForm`. Here's the interface
+  for it. Note the import used for the icon.
+
+```tsx
+import { MdSwapHoriz } from 'react-icons/md';
+
+export interface SideToggleProps {
+  side: Side;
+  onClick: () => void;
+}
+```
 
 - When `OrderForm` submits, it sends an `Order` object to the parent. Transform
   this object to `OrderInput` and use it to send the `PlaceOrder` mutation to

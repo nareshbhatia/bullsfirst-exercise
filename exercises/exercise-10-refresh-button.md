@@ -35,9 +35,12 @@ Accounts
 
 - Create a new component called `RefreshButton` under in the same folder as
   `AccountHeader` (`/src/pages/Accounts/AccountHeader`). When this button is
-  clicked, it should increment the `refreshCount`.
+  clicked, it should increment the `refreshCount`. Note the import for icon used
+  for the refresh button.
 
 ```tsx
+import { FaRedoAlt } from 'react-icons/fa';
+
 export const RefreshButton = () => {
   const { refreshCount, setRefreshCount } = useRefreshContext();
 

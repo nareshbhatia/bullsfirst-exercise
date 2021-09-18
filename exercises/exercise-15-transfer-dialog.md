@@ -218,9 +218,20 @@ export interface TransferFormProps {
 }
 ```
 
-- Use `NumberField` to implement the Amount field. Create a separate component
-  called `DirectionToggle` to implement the direction toggle. Create it in the
-  same directory as `TransferForm`.
+- Use `NumberField` to implement the Amount field.
+
+- Create a separate component called `DirectionToggle` to implement the
+  direction toggle. Create it in the same directory as `TransferForm`. Here's
+  the interface for it. Note the import used for the icon.
+
+```tsx
+import { MdSwapHoriz } from 'react-icons/md';
+
+export interface DirectionToggleProps {
+  direction: Direction;
+  onClick: () => void;
+}
+```
 
 - When `TransferForm` submits, it sends `TransferCashInput` to the parent. Use
   this input to send the `TransferCash` mutation to the server. Show a success
