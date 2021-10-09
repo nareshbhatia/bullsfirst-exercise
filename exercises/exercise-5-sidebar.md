@@ -13,7 +13,7 @@ inform its parent about user interactions using the handler passed in the
 `onNavItemSelected` prop.
 
 1. `title`: string (optional)
-2. `items`: an array of `NavItems` containing { id: string, title: string }
+2. `items`: an array of `NavItems` containing { id: string, name: string }
 3. `selectedNavItemId`: string
 4. `onNavItemSelected`: function to be called when a NavItem is selected. This
    signature is (navItemId: string) => void;
