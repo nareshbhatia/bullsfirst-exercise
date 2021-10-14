@@ -220,6 +220,7 @@ ReactDOM.render(
 ```tsx
 import { useMutation } from '@apollo/client';
 import { Credentials, SignInDocument } from '../../graphql';
+import { AuthService } from '../../services';
 
 export const SignInPage = () => {
   ...
@@ -240,6 +241,11 @@ export const SignInPage = () => {
   ...
 };
 ```
+
+- Also note in the code above that the received access token is saved in
+  localStorage using AuthService. Create a file at
+  `/src/services/AuthService.ts` and add the `setAccessToken` method to it to
+  save the access token. Look at accelerated-news for details.
 
 - Finally, add a `useEffect` to the SignIn component to monitor `authState` and
   if a user is present, redirect to `/accounts`. See below:
