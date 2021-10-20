@@ -65,12 +65,10 @@ the GraphQL server as the user types.
 
 ```sh
 npm install react-select
-npm install --saveDev @types/react-select
 
 # or
 
 yarn add react-select
-yarn add -D @types/react-select
 ```
 
 - Let's start by implementing the `GetSecurities` query. Add the following query
