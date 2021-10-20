@@ -29,7 +29,7 @@ In this exercise, we will
 ### React Router
 
 Use React Router's
-[nested routes](https://github.com/ReactTraining/react-router/blob/dev/docs/installation/getting-started.md#nested-routes)
+[nested routes](https://github.com/remix-run/react-router/blob/dev/docs/getting-started/quick-start.md)
 feature to navigate to the 4 tabs on the Account page:
 
 ```typescript jsx
@@ -58,7 +58,7 @@ For example, if the user has an account with id = 'brokerage-account', the route
 for the overview tab will be `/accounts/brokerage-account/overview`.
 
 Also use React Router's
-[NavLink](https://github.com/ReactTraining/react-router/blob/dev/docs/api-reference.md#navlink)
+[NavLink](https://github.com/remix-run/react-router/blob/dev/docs/api.md#navlink)
 component to create the 4 links on the Account page.
 
 ### Apollo GraphQL Client
