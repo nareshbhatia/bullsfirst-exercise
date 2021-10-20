@@ -29,7 +29,7 @@ In this exercise, we will
 ### React Router
 
 Use React Router's
-[nested routes](https://github.com/remix-run/react-router/blob/dev/docs/getting-started/quick-start.md)
+[nested routes](https://github.com/remix-run/react-router/blob/dev/docs/getting-started/quick-start.md#nested-routes)
 feature to navigate to the 4 tabs on the Account page:
 
 ```typescript jsx
