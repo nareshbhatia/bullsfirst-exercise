@@ -100,7 +100,8 @@ const drilldown = {
 
 - Make sure that the pie colors match the visual design in Figma. Use the
   following code in `index.tsx` and `.storybook/preview.tsx` to configure
-  Highcharts colors.
+  Highcharts colors. You can copy `ChartColors` from
+  `/code/src/utils/Constants.ts`.
 
 ```ts
 // Initialize Highcharts
