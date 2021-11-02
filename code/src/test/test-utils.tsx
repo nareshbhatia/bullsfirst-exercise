@@ -1,8 +1,14 @@
 import React, { ReactElement, Suspense } from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { render, RenderOptions } from '@testing-library/react';
-import { MemoryRouter as Router } from 'react-router-dom';
-import { ErrorBoundary, Loading } from '../components';
+import userEvent from '@testing-library/user-event';
+import { BrowserRouter as Router } from 'react-router-dom';
+import {
+  ErrorBoundary,
+  Loading,
+  MessageContextProvider,
+  MessageDialog,
+} from '../components';
 import { AuthContextProvider, EnvProvider } from '../contexts';
 import { GraphQlUtils } from '../utils';
 
@@ -15,25 +21,24 @@ import { GraphQlUtils } from '../utils';
 // https://testing-library.com/docs/react-testing-library/setup/#custom-render
 // -----------------------------------------------------------------------------
 
-(window as any)._env_ = {
-  API_URL: 'http://localhost:4000',
-};
-
 // Create Apollo Client
 const apolloClient = GraphQlUtils.createApolloClient();
 
 const AllProviders: React.FC = ({ children }) => {
   return (
     <Suspense fallback={<Loading />}>
-      <ErrorBoundary>
-        <EnvProvider>
-          <ApolloProvider client={apolloClient}>
-            <AuthContextProvider>
-              <Router>{children}</Router>
-            </AuthContextProvider>
-          </ApolloProvider>
-        </EnvProvider>
-      </ErrorBoundary>
+      <MessageContextProvider>
+        <ErrorBoundary>
+          <EnvProvider>
+            <ApolloProvider client={apolloClient}>
+              <AuthContextProvider>
+                <Router>{children}</Router>
+                <MessageDialog />
+              </AuthContextProvider>
+            </ApolloProvider>
+          </EnvProvider>
+        </ErrorBoundary>
+      </MessageContextProvider>
     </Suspense>
   );
 };
@@ -41,11 +46,21 @@ const AllProviders: React.FC = ({ children }) => {
 /**
  * Custom render method that includes global context providers
  */
-const customRender = (
-  ui: ReactElement,
-  options?: Omit<RenderOptions, 'queries'>
-) => render(ui, { wrapper: AllProviders, ...options });
+type CustomRenderOptions = {
+  initialRoute?: string;
+  renderOptions?: Omit<RenderOptions, 'wrapper'>;
+};
+
+function customRender(ui: ReactElement, options?: CustomRenderOptions) {
+  const opts = options || {};
+  const { initialRoute, renderOptions } = opts;
+
+  if (initialRoute) {
+    window.history.pushState({}, 'Initial Route', initialRoute);
+  }
+
+  return render(ui, { wrapper: AllProviders, ...renderOptions });
+}
 
 export * from '@testing-library/react';
-
-export { customRender as render };
+export { customRender as render, userEvent };

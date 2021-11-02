@@ -17,24 +17,17 @@ padding. So the effective max-width for content on desktops is 800 - (2 * 24) =
 - Use only CSS to style your components.
 - Use CSS Variables to ensure that you are not repeating color values, spacings
   etc.
-- You may use a lightweight CSS framework like
-  [Chota](https://jenil.github.io/chota/) to get you started. See
-  [Accelerated News](https://github.com/PublicisSapient/accelerated-news) for an
-  example.
-- Note that the Inter font and Chota should be loaded in `/public/index.html`.
-  Also, Storybook should load them for your stories to work correctly. This is
-  done in `.storybook/preview-head.html`. Look at Accelerated News to see how
-  this is done.
-- If you decide to use Chota, then remove all the CSS in `/styles/main.css` that
-  is generated ny the template, because it interferes with Chota. Instead, use
-  the `main.css` from accelerated-news as your starting point.
+- Use `main.css` in
+  [Accelerated News](https://github.com/PublicisSapient/accelerated-news) as a
+  starting point for your styling.
+- Note that the Inter font should be loaded in `/public/index.html`. Also,
+  Storybook should load it for your stories to work correctly. This is done in
+  `.storybook/preview-head.html`. Look at Accelerated News to see how this is
+  done.
 - Use [BEM](https://en.bem.info/) to properly namespace your styles.
 - Set the route for this page to `/`.
 - The visual design specifies `Inter` as the font for all the typography. Make
-  sure you load this font and set it as the default on the `<body>` tag. Chota
-  does this automatically, you just need to override the `font-family-sans` CSS
-  variable. See how this is done in accelerated-news (`index.html` &
-  `main.css`).
+  sure you load this font and set it as the default on the `<body>` tag.
 - When the "Sign In" button is clicked, navigate to a blank page with the route
   set to `/signin`.
 - Don't build the Home page as a monolithic component. Break it up into smaller
