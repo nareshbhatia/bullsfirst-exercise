@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Meta } from '@storybook/react';
-import { MemoryRouter as Router } from 'react-router-dom';
 import { HorizontalContainer } from '../../../components';
 import { RefreshContextProvider } from '../../../contexts';
 import { AccountContextProvider, useAccountContext } from '../AccountContext';
@@ -37,17 +36,15 @@ const AccountHeader = () => {
 
 const TestContainer = () => {
   return (
-    <Router>
-      <AccountContextProvider>
-        <RefreshContextProvider>
-          <OrderContextProvider>
-            <AccountInitializer />
-            <AccountHeader />
-            <OrderDialog />
-          </OrderContextProvider>
-        </RefreshContextProvider>
-      </AccountContextProvider>
-    </Router>
+    <AccountContextProvider>
+      <RefreshContextProvider>
+        <OrderContextProvider>
+          <AccountInitializer />
+          <AccountHeader />
+          <OrderDialog />
+        </OrderContextProvider>
+      </RefreshContextProvider>
+    </AccountContextProvider>
   );
 };
 
