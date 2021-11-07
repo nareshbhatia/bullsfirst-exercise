@@ -96,7 +96,13 @@ const drilldown = {
 />;
 ```
 
-- Write a Storybook story to make sure that the pie chart works as expected.
+- Write a Storybook story to make sure that the pie chart looks and behaves as
+  expected. See the points below.
+
+- Chart height should be fixed to 388px by its container whereas the width
+  should be left flexible. So, depending on the window width, the two chart
+  containers will generally be rectangular, only in a special case they will be
+  square.
 
 - Make sure that the pie colors match the visual design in Figma. Use the
   following code in `index.tsx` and `.storybook/preview.tsx` to configure
@@ -109,6 +115,32 @@ Highcharts.setOptions({
   colors: ChartColors,
 });
 ```
+
+- The chart should always be in the center of the container and maintain its
+  size when you drill down. For this to work, you will need to set the
+  `plotOptions` to fix the center and the size to reasonable values. You may
+  also want to set different values for this when the container size is reduced
+  (look up the responsive property of the chart).
+
+- The default hover behavior is not very pleasing. Turn it off using the
+  settings below:
+
+```ts
+plotOptions: {
+  series: {
+    states: {
+      hover: {
+        enabled: false;
+      }
+      inactive: {
+        opacity: 1;
+      }
+    }
+  }
+}
+```
+
+- Turn off tooltips, they are not providing any additional information!
 
 - Write a simple test to make sure that the pie chart renders correctly. At a
   minimum, check to see if the expected number of pies are being rendered. See
