@@ -27,8 +27,13 @@ As part of the previous exercises, we already have a placeholder for the
   data in `/src/mocks/data/orders.json`.
 
 - Try out the orders tab in the app now. Does it work? Make sure that the
-  numbers and dates are formatted as show in the Visual design. (Dates can be
+  numbers and dates are formatted as shown in the Visual design. (Dates can be
   formatted based on your locale.)
+
+- Make sure that the Side, Type and Status columns show the correct case (not
+  all upper case). You can use the supplied translations file the convert from
+  the enumeration values to English strings (see
+  `/code/src/graphql/translations.ts`).
 
 - Make sure that the date column can be filtered as a date object and not as a
   string. ag-Grid should show a calendar widget to set the date filter.
