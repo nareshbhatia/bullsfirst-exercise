@@ -36,19 +36,20 @@ feature to navigate to the 4 tabs on the Account page:
 export const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <PrivateRoute
+      <Route path="/" element={<HomePage />} />
+      <Route
         path="/accounts"
-        redirectPath="/signin"
-        element={<AccountsPage />}
+        element={
+          <PrivateRoute redirectPath="/signin" element={<AccountsPage />} />
+        }
       >
         <Route path=":accountId" element={<AccountView />}>
           <Route path="overview" element={<Overview />} />
         </Route>
-      </PrivateRoute>
-      <Route path="/signin" element={<SignIn />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="*" element={<NotFound />} />
+      </Route>
+      <Route path="/signin" element={<SignInPage />} />
+      <Route path="/signup" element={<SignUpPage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
@@ -66,10 +67,11 @@ the 4 links on the Account page.
 Note that Apollo GraphQL provider was set up in exercise 3.
 
 For this exercise you need to query the server in
-`src/features/Accounts/Accounts.tsx` to fetch the accounts. Copy the GraphQL
-query from `/code/src/pages/AccountsPage/AccountsPage.query.graphql` to your
-repo. Generate the code for the query by running `graphql:codegen`. Finally,
-execute the query from `Accounts.tsx` and supply the results to `<SideBar>`.
+`/src/pages/AccountsPage/AccountsPage.tsx` to fetch the accounts. Copy the
+GraphQL query from `/code/src/pages/AccountsPage/AccountsPage.query.graphql` to
+your repo. Generate the code for the query by running `graphql:codegen`.
+Finally, execute the query from `AccountsPage.tsx` and supply the results to
+`<SideBar>`.
 
 ### Mock Service Worker
 
