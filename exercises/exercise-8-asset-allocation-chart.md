@@ -50,7 +50,18 @@ export interface PieChartProps {
 }
 ```
 
-Here's an example of invoking this pie chart:
+- Note that the drilldown feature requires the Highcharts drilldown module. You
+  need to import it in `PieChart.tsx` and call the `drilldown` function. See
+  below:
+
+```ts
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+import drilldown from 'highcharts/modules/drilldown';
+drilldown(Highcharts);
+```
+
+Here's an example of invoking the pie chart:
 
 ```tsx
 const series = [
