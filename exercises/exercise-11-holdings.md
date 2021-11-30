@@ -58,6 +58,24 @@ type Holding {
 }
 ```
 
+- While the GraphQL definition for `Holding` contains an `account`, that is just
+  for completeness. After all, holdings belong to an account. However, our
+  holdings query is specific to an account. So we do not need to ask for an
+  account for each holding. Hence our holdings fragment should look like this:
+
+```graphql
+fragment HoldingFields on Holding {
+  id
+  quantity
+  value
+  security {
+    id
+    name
+    price
+  }
+}
+```
+
 - Generate the code for the query by running `graphql:codegen`.
 
 - Add the following modules to Bullsfirst client to get started with ag-Grid.
