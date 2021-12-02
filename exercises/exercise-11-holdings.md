@@ -222,6 +222,9 @@ type GridState = {
 import { CgArrowsHAlt, CgArrowsShrinkH } from 'react-icons/cg';
 ```
 
+- Make sure that the two buttons show appropriate tool-tips: "Size to Fit" and
+  "Auto-Size". Use the title attribute on the buttons to achieve this.
+
 - Assume that the `GridToolbar` will have access to the `GridContext`. Use
   `gridApi` and `columnApi` from `GridContext` to implement the _Size To Fit_
   and _Auto Size_ buttons.
