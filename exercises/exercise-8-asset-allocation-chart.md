@@ -45,8 +45,8 @@ type AssetAllocation {
 ```ts
 export interface PieChartProps {
   title: string;
-  series: any;
-  drilldown: any;
+  series: SeriesPieOptions[];
+  drilldown: DrilldownOptions;
 }
 ```
 
@@ -55,7 +55,7 @@ export interface PieChartProps {
   below:
 
 ```ts
-import Highcharts from 'highcharts';
+import Highcharts, { DrilldownOptions, SeriesPieOptions } from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import drilldown from 'highcharts/modules/drilldown';
 drilldown(Highcharts);
