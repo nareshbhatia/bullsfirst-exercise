@@ -55,7 +55,11 @@ export interface PieChartProps {
   below:
 
 ```ts
-import Highcharts, { DrilldownOptions, SeriesPieOptions } from 'highcharts';
+import Highcharts, {
+  DrilldownOptions,
+  Options,
+  SeriesPieOptions,
+} from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import drilldown from 'highcharts/modules/drilldown';
 drilldown(Highcharts);
