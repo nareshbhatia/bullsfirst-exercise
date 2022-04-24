@@ -88,7 +88,8 @@ authorization: Bearer 2c2977af-401e-47f2-a867-840ce9760572
 ```
 
 Finally, when the user signs out, the server discards the access token. The
-client can no longer make requests using the same access token.
+client can no longer make requests using the same access token. The client
+redirects to the home page.
 
 As mentioned above, the Bullsfirst client saves the access token in
 localStorage. When the client starts up, and it finds the access token in
@@ -329,7 +330,8 @@ import { FaSignOutAlt } from 'react-icons/fa';
   this exercise the server does not remember the access tokens issued to
   clients. So simply return the access token sent by the client. In the next
   exercise, we will start saving the access tokens on the server side, and
-  validating against them.
+  validating against them. After successfully signing out, the client should
+  redirect to the home page.
 - If the user tries to access a secure page such as '/accounts' directly, and
   they are not signed in to Bullsfirst, they should be redirected to the signin
   page. After a successful sign in, they should be directed back to the accounts
