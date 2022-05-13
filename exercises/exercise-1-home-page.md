@@ -51,20 +51,13 @@ padding. So the effective max-width for content on desktops is 800 - (2 * 24) =
 
 As a participant in the React Accelerate program, you have been assigned a
 repository named `bullsfirst-[firstname]-[lastname]` on GitHub. Please create a
-local repo on your machine with the same name using the
-[React Accelerate](https://github.com/PublicisSapient/cra-template-accelerate)
-template. For example, the repository name assigned to me was
-`bullsfirst-naresh-bhatia`, so I created a local repository using the following
-command:
+local repo on your machine with the exact same name using the detailed
+instructions in the Getting Started section of the
+[React Accelerate](https://github.com/PublicisSapient/cra-template-accelerate#getting-started)
+template. Follow these instructions precisely to avoid wasting time.
 
-```sh
-npx create-react-app bullsfirst-naresh-bhatia --template accelerate
-```
-
-Make sure your local repo works by running the app. Make any adjustments if
-needed. For example, I prefer the sections in package.json in a certain order
-(see some initial commits on accelerated-news). If everything looks good, push
-this repository to GitHub using the instructions in your GitHub repository page.
+If everything looks good, push this repository to GitHub using the instructions
+in your GitHub repository page.
 
 At this point create a branch from `main` and call it something like
 `home-page`. Always work on a branch when implementing a new feature or fixing a
