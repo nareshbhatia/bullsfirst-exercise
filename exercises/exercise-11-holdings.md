@@ -85,12 +85,12 @@ fragment HoldingFields on Holding {
 
 ```sh
 npm install ag-grid-community@25.3.0 ag-grid-react@25.3.0
-npm install --save-dev node-sass@4.14.1
+npm install --save-dev node-sass
 
 # or
 
 yarn add ag-grid-community@25.3.0 ag-grid-react@25.3.0
-yarn add -D node-sass@4.14.1
+yarn add -D node-sass
 ```
 
 - Create a custom grid component at `src/components/Grids/CustomGrid.tsx` that
